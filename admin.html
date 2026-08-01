@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mundo Periféricos - Administradores</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+	<body>
+		<div class="main-container">
+			<div class="container">
+				<h2>¡Registrar productos!</h2>
+
+				<div>
+					<form id="form-productos">
+						<div class="form-group">
+							<label for="nombreProducto">Nombre de producto</label>
+							<input 
+							type="text" 
+							id="nombreProducto" 
+							maxlength="60" 
+							placeholder="Nombre producto" 
+							required>
+						</div>
+						
+						<div class="form-group">
+							<label for="idProducto">ID del producto</label>
+							<input 
+							type="number" 
+							id="idProducto"
+							min="1"
+							required>
+						</div>
+						
+						<div>
+							<label for="filtroTipo">Tipo de producto</label>
+							<select id="filtroTipo" class="filter-btn" required>
+								<option value="">Seleccione una opcion</option>
+							</select>
+							<button class="btn btn-small" onclick="window.location.href='editar_filtros_admin.html'">Editar Filtros</button>
+						</div>
+						
+						<br><br>
+
+						<div class="form-group">
+							<label for="cantidadProducto">Stock de producto</label>
+							<input 
+							type="number" 
+							id="cantidadProducto" 
+							placeholder="Cantidad de producto" 
+							required>
+						</div>
+
+						<div class="form-group">
+							<label for="precioProducto">Precio del producto</label>
+							<input type="number" id="precioProducto" placeholder="Precio de producto" required>
+						</div>
+
+						<div class="form-group">
+							<label for="ivaProducto">IVA de producto:</label>
+							<select id="ivaProducto" required>
+								<option value="">Seleccione una opcion</option>
+								<option value="10">IVA Minimo</option>
+								<option value="22">IVA Básico</option>
+								<option value="0">Extento de IVA</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="imgProducto">Imagen del producto</label>
+							<input 
+							type="text" 
+							id="imgProducto" 
+							placeholder="img/laptop.png">
+						</div>
+
+						<div class="text-center">
+							<button type="submit" class="btn btn-primary">Registrar producto</button>
+						</div>
+					</form>
+
+					<p id="catalogoProductos"></p>
+					
+					<br><br>
+
+					<div class="text-center">
+						<a href="menu.html" class="btn btn-secondary">Ver menú principal</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="scripts/base/storage.js"></script>
+		<script src="scripts/base/autenticacion.js"></script>
+		<script src="scripts/clases/producto.js"></script>
+		<script src="scripts/base/initializer.js"></script>
+		<script src="scripts/admin/admin.js"></script>
+	</body>
+</html>

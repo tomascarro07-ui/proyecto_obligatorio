@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mundo Periféricos - Menu</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+	<body>
+		<div class="navbar">
+			<div class="navbar-container">
+				<div class="navbar-title">
+					<p id="usuarioActual"></p>
+				</div>
+				<div>
+					<form id="form-buscador" action="busqueda_catalogo.html">
+						<input class="buscador" minlength="2" type="text" name="nombre" id="buscador" placeholder="Buscar producto...">
+						<button type="submit" class="btn btn-small">Buscar</button>
+					</form>
+				</div>
+				<div>
+					<button class="btn btn-small" onclick="window.location.href='carrito.html'">Mi carrito</button>
+					<button class="btn btn-small" onclick="cerrarSesion()">Cerrar sesión</button>
+				</div>
+			</div>
+		</div>
+
+		<center><h2>¡Bienvenido a nuestra tienda de periféricos!</h2></center>
+
+		<div style="display: flex;">
+			<p id="administrador"></p>
+			<p id="usuario"></p>
+		</div>
+
+		<center><img src="img/menu.png" width="500px"></center>
+
+		<center><h2>Catalogo de Productos:</h2></center>
+		<div>
+			<center>
+				<label for="filtroTipo">Filtrar por:</label>
+				<select id="filtroTipo" class="filter-btn" required>
+					<option value="todas">Todos los productos</option>
+				</select>
+			</center>
+		</div>
+
+		<p id="filtrarProductos"></p>
+
+		<br>
+
+		<div>
+			<center><div id="catalogoProductos"></div></center>
+		</div>
+		
+		<div>
+			<a class="btn btn-secondary" href="guia_uso.html">Ayuda</a>
+		</div>
+
+		<script src="scripts/base/storage.js"></script>
+		<script src="scripts/base/autenticacion.js"></script>
+		<script src="scripts/clases/producto.js"></script>
+		<script src="scripts/base/initializer.js"></script>
+		<script src="scripts/catalogo/menu.js"></script>
+		<script src="scripts/catalogo/listar_productos.js"></script>
+	</body>
+</html>

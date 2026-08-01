@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mundo Periféricos - Confirmar compra</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+	<body>
+		<div class="main-container">
+			<div class="container">
+				<h2>Confirmar compra</h2>
+				<p id="micarrito"></p>
+				<p id="totalCompra"></p>
+				<h3>¿Desea confirmar esta compra?</h3>
+
+				<div class="text-center">
+					<button class="btn btn-secondary" onclick="window.location.href='carrito.html'">
+						Volver al carrito
+					</button>
+					<button class="btn btn-primary" onclick="window.location.href='compra_realizada.html'">
+						Confirmar compra
+					</button>
+				</div>
+
+				<br>
+
+				<div class="text-center">
+					<a class="btn btn-secondary" href="menu.html">
+						Volver al menú principal
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<script src="scripts/base/storage.js"></script>
+		<script src="scripts/base/autenticacion.js"></script>
+		<script src="scripts/carrito/confirmar_compra.js"></script>
+	</body>
+</html>

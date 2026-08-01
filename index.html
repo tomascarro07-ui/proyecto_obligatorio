@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mundo Periféricos - Registro</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+	<body>
+		<div class="main-container">
+			<div>
+				<a class="btn btn-secondary" href="guia_uso.html">Ayuda</a>
+			</div>
+
+			<div class="container form-container">
+				<form id="form-registro">
+					<center><h2>¡Registrate en Mundo Periféricos!</h2></center>
+
+					<div class="form-group">
+						<label for="nombre">Nombre</label>
+						<input 
+						type="text" 
+						id="nombre" 
+						maxlength="60" 
+						placeholder="Tu nombre" 
+						required>
+					</div>
+
+					<div class="form-group">
+						<label for="correo">Correo Electronico</label>
+						<input 
+						type="email" 
+						id="correo" 
+						maxlength="60" 
+						placeholder="Tu correo" 
+						required>
+					</div>
+
+					<div class="form-group">
+						<label for="contrasenia">Contraseña</label>
+						<input 
+						type="password" 
+						id="contrasenia" 
+						minlength="8" 
+						placeholder="Tu contraseña" 
+						required>
+					</div>
+
+					<br>
+
+					<button class="btn btn-primary" type="submit">Registrarse</button>
+					<a class="btn btn-secondary" href="login.html">Ya tengo cuenta</a>
+				</form>
+			</div>
+		</div>
+
+		<script src="scripts/base/storage.js"></script>
+		<script src="scripts/acceso/index.js"></script>
+	</body>
+</html>
