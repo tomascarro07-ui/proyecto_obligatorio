@@ -12,12 +12,16 @@ document.addEventListener("DOMContentLoaded",function() {
 				return;
 			}
 			
-			let registro = {
-				nombre: document.getElementById("nombre").value,
-				correo: document.getElementById("correo").value,
-				contrasenia: document.getElementById("contrasenia").value,
-				admin: false
-			}
+			let registro = new Usuario (
+				usuarios.length + 1,
+				document.getElementById("correo").value,
+				document.getElementById("nombre").value,
+				document.getElementById("apellido").value,
+				document.getElementById("contrasenia").value,
+				false,
+				document.getElementById("nacimiento").value,
+			);
+			
 			usuarios.push(registro);
 			guardarEnStorage("usuariosRegistrados",usuarios);
 			alert("¡Registro realizado correctamente!");

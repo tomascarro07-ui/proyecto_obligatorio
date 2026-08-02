@@ -21,3 +21,11 @@ function resumenCompra() {
 }
 
 resumenCompra();
+
+function mostrarTexto(tipo){
+	if(tipo === "domicilio") {
+		document.getElementById("direccion").innerHTML = `<label for="direccion">Ingresa tu dirección</label> <br> <input type="text" required>`
+	} else if (tipo === "sucursal") {
+		document.getElementById("direccion").innerHTML = ""
+	}
+}

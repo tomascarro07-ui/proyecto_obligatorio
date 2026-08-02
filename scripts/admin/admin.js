@@ -4,10 +4,12 @@ let filtros = leerDeStorage("filtrosRegistrados", []);
 let usuarioActual = validarSesion();
 inicializarFiltro()
 
-if(!usuarioActual.admin){
+if(!usuarioActual.esAdministrador){
     alert("Acceso denegado");
     window.location.href = "menu.html";
 }
+
+document.getElementById("idProducto").value = Number(productos.length + 1);
 
 document.addEventListener("DOMContentLoaded", function() {
 		

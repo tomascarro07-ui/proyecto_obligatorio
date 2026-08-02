@@ -1,6 +1,6 @@
 let usuarioActual = validarSesion();
 let ventasRealizadas = leerDeStorage("comprasRealizadas",[])
-if(!usuarioActual.admin){
+if(!usuarioActual.esAdministrador){
     alert("Acceso denegado");
     window.location.href = "menu.html";
 }

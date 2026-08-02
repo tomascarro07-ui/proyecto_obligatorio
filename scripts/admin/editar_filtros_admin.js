@@ -1,7 +1,7 @@
 let filtros = leerDeStorage("filtrosRegistrados", []);
 let productos = leerDeStorage("productosRegistrados",[]);
 let usuarioActual = validarSesion();
-if(!usuarioActual.admin){
+if(!usuarioActual.esAdministrador){
     alert("Acceso denegado");
     window.location.href = "menu.html";
 }

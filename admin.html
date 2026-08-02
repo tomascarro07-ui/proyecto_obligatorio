@@ -14,7 +14,7 @@
 				<div>
 					<form id="form-productos">
 						<div class="form-group">
-							<label for="nombreProducto">Nombre de producto</label>
+							<label for="nombreProducto">Nombre de producto *</label>
 							<input 
 							type="text" 
 							id="nombreProducto" 
@@ -23,17 +23,18 @@
 							required>
 						</div>
 						
+						<!-- Quiero hacer que el id sea autoincrementable -->
+						
 						<div class="form-group">
 							<label for="idProducto">ID del producto</label>
 							<input 
 							type="number" 
 							id="idProducto"
-							min="1"
-							required>
+							readonly>
 						</div>
 						
 						<div>
-							<label for="filtroTipo">Tipo de producto</label>
+							<label for="filtroTipo">Tipo de producto *</label>
 							<select id="filtroTipo" class="filter-btn" required>
 								<option value="">Seleccione una opcion</option>
 							</select>
@@ -43,21 +44,23 @@
 						<br><br>
 
 						<div class="form-group">
-							<label for="cantidadProducto">Stock de producto</label>
+							<label for="cantidadProducto">Stock de producto *</label>
 							<input 
 							type="number" 
 							id="cantidadProducto" 
 							placeholder="Cantidad de producto" 
+							min="1"
+							value="1"
 							required>
 						</div>
 
 						<div class="form-group">
-							<label for="precioProducto">Precio del producto</label>
+							<label for="precioProducto">Precio del producto *</label>
 							<input type="number" id="precioProducto" placeholder="Precio de producto" required>
 						</div>
 
 						<div class="form-group">
-							<label for="ivaProducto">IVA de producto:</label>
+							<label for="ivaProducto">IVA de producto: *</label>
 							<select id="ivaProducto" required>
 								<option value="">Seleccione una opcion</option>
 								<option value="10">IVA Minimo</option>

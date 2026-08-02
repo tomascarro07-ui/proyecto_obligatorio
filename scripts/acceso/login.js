@@ -1,5 +1,6 @@
 let parametros = new URLSearchParams(window.location.search);
 let correo = parametros.get("correo");
+let usuarios = leerDeStorage("usuariosRegistrados",[]);
 const admin = {
     correo: "admin@admin",
     contrasenia: "admin123",
@@ -18,11 +19,15 @@ document.addEventListener("DOMContentLoaded",function() {
 			let contraseniaUsuario = document.getElementById("contrasenia").value;
 			
 			if (correoUsuario === admin.correo && contraseniaUsuario === admin.contrasenia) {
-				let sesionAdmin = {
-					nombre: admin.nombre,
-					correo: admin.correo,
-					admin: true
-				};
+				let sesionAdmin = new Usuario (
+					usuarios.length + 1,
+					document.getElementById("correo").value,
+					"Admin",
+					"Mundo Perifericos",
+					document.getElementById("contrasenia").value,
+					true,
+					"Administrador",
+				);
 				guardarEnStorage("sesionActual",sesionAdmin);
 				window.location.href = "menu.html";
 				return;
