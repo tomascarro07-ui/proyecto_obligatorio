@@ -14,23 +14,26 @@
 				</div>
 				<div>
 					<form id="form-buscador" action="busqueda_catalogo.html">
-						<input class="buscador" minlength="2" type="text" name="nombre" id="buscador" placeholder="Buscar producto...">
-						<button type="submit" class="btn btn-small">Buscar</button>
+						<div class="buscador">
+							<input minlength="2" type="text" name="nombre" id="buscador" placeholder="Buscar producto...">
+							<button title="Buscar" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-zoom"> <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /> <path d="M21 21l-6 -6" /> </svg></button> 
+						</div>
 					</form>
 				</div>
-				<div>
-					<button class="btn btn-small" onclick="window.location.href='carrito.html'">Mi carrito</button>
+				<div class="acciones">
 					<button class="btn btn-small" onclick="cerrarSesion()">Cerrar sesión</button>
+					<a href='carrito.html' title="Carrito"><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M15 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M17 17h-11v-14h-2" /><path d="M6 5l14 1l-1 7h-13" /></svg></a>
 				</div>
+			</div>
+			<div>
+				<p id="administrador"></p>
+				<p id="usuario"></p>
 			</div>
 		</div>
 
 		<center><h2>¡Bienvenido a nuestra tienda de periféricos!</h2></center>
 
-		<div style="display: flex;">
-			<p id="administrador"></p>
-			<p id="usuario"></p>
-		</div>
+		
 
 		<center><img src="img/menu.png" width="500px" alt="Productos de la tienda"></center>
 
@@ -50,10 +53,6 @@
 
 		<div>
 			<center><div id="catalogoProductos"></div></center>
-		</div>
-		
-		<div>
-			<a class="btn btn-secondary" href="guia_uso.html">Ayuda</a>
 		</div>
 
 		<script src="scripts/base/storage.js"></script>

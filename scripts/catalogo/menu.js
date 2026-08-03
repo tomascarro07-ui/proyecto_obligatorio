@@ -10,9 +10,9 @@ if(usuarioActual) {
 };
 
 if(usuarioActual.esAdministrador === true) {
-	document.getElementById("administrador").innerHTML = `<button class="btn btn-small" onclick="window.location.href='admin.html'">Agregar productos</button> <button class="btn btn-small" onclick="window.location.href='ventas_admin.html'">Ventas realizadas</button>`;
+	document.getElementById("administrador").innerHTML = `<div class="menu"><a href="admin.html">Agregar productos</a> <a href="ventas_admin.html">Ventas realizadas</a> <a href="editar_filtros_admin.html">Editar categorias</a></div>`;
 } else {
-	document.getElementById("usuario").innerHTML = `<button class="btn btn-small" onclick="window.location.href='venta_usuario.html'">Mis compras</button>`
+	document.getElementById("usuario").innerHTML = `<div class="menu"><a href="venta_usuario.html">Mis compras</a> <a href="guia_uso.html">Ayuda</a>`;
 };
 
 

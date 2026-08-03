@@ -2,6 +2,7 @@ let productosCarrito = leerDeStorage("productosMiCarrito",[]);
 let productos = leerDeStorage("productosRegistrados",[]);
 let usuarioActual = validarSesion();
 let ventasRealizadas = leerDeStorage("comprasRealizadas",[])
+let datosEntrega = leerDeStorage("datosCompra",[])
 
 function resumenCompra() {
 	let carrito = "Productos: <br><br>";
@@ -21,16 +22,21 @@ function resumenCompra() {
 		cantidadProducto += productoCarrito.cantidad;
 		nombreProducto += `Producto: ${productoCarrito.nombre}. Cantidad: ${productoCarrito.cantidad} <br>`;
 	};
-	let ventaRealizada = {
-		fecha: new Date().toLocaleString(),
-		persona: usuarioActual.nombre,
-		correo: usuarioActual.correo,
-		cantidadProductos: cantidadProducto,
-		iva: sumaIva.toFixed(2),
-		subtotal: sumaSinIva.toFixed(2),
-		sumaTotal: sumaTotal.toFixed(2),
-		nombreProductos: nombreProducto
-	};
+
+	let ventaRealizada = new Venta (
+		ventasRealizadas.length + 1,
+		new Date().toLocaleString(),
+		usuarioActual.nombre,
+		usuarioActual.correo,
+		cantidadProducto,
+		Number(sumaIva.toFixed(2)),
+		Number(sumaSinIva.toFixed(2)),
+		nombreProducto,
+		datosEntrega.metodoPago,
+		datosEntrega.metodoEntrega,
+		datosEntrega.direccion
+	);
+	
 	ventasRealizadas.push(ventaRealizada);
 	guardarEnStorage("comprasRealizadas",ventasRealizadas);
 	guardarEnStorage("productosRegistrados",productos);

@@ -24,8 +24,36 @@ resumenCompra();
 
 function mostrarTexto(tipo){
 	if(tipo === "domicilio") {
-		document.getElementById("direccion").innerHTML = `<label for="direccion">Ingresa tu dirección</label> <br> <input type="text" required>`
+		document.getElementById("direccion").innerHTML = `<label for="direccionCompra">Ingresa tu dirección</label> <br> <input id="direccionCompra" type="text" required>`
 	} else if (tipo === "sucursal") {
 		document.getElementById("direccion").innerHTML = ""
 	}
+}
+
+function confirmarCompra() {
+    let metodoPago = document.querySelector('input[name="metodPago"]:checked').value;
+
+    let metodoEnvio = document.querySelector('input[name="metodeEnvio"]:checked');
+
+    if (!metodoEnvio) {
+        alert("Seleccione un método de envío");
+        return;
+    }
+
+    metodoEnvio = metodoEnvio.value
+	let inputDireccion = document.getElementById("direccion");
+	let direccionEnvio;
+	if(direccionEnvio) {
+		direccionEnvio = inputDireccion
+	} else {
+		direccionEnvio = "PickUp"
+	}
+	
+    let datosEntrega = {
+		metodoPago: metodoPago,
+		metodoEntrega: metodoEnvio,
+		direccion: direccionEnvio
+	}
+	guardarEnStorage("datosCompra",datosEntrega);
+	window.location.href = "compra_realizada.html"
 }
