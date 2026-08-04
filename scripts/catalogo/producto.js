@@ -44,12 +44,13 @@ document.addEventListener("DOMContentLoaded",function(){
 			let repetido = false;
 			if(cantidadAlCarrito <= stockNombre && cantidadAlCarrito > 0) {
 				let agregarProducto = {
-				nombre: productoNombre,
-				precio: totalProducto,
-				precioUnitario: precioAlCarrito,
-				cantidad: cantidadAlCarrito,
-				iva: ivaProducto,
-				foto: fotoProducto
+					nombre: productoNombre,
+					precio: totalProducto,
+					precioUnitario: precioAlCarrito,
+					cantidad: cantidadAlCarrito,
+					iva: ivaProducto,
+					foto: fotoProducto,
+					usuario: usuarioActual.correo
 				};
 				for(let i = 0; i < productos.length; i++) {
 					let producto = productos[i];

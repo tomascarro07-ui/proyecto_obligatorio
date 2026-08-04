@@ -8,12 +8,14 @@ function resumenCompra() {
 	let sumaSinIva = 0; 
 	for(let i = 0; i < productosCarrito.length; i++) {
 		let productoCarrito = productosCarrito[i]
-		let monto = Number(productoCarrito.precio) / (1 + Number(productoCarrito.iva) / 100);
-		let iva = Number(productoCarrito.precio) - monto;
-		sumaSinIva += monto
-		sumaIva += iva
-		sumaTotal += Number(productoCarrito.precio)
-		carrito +=` <div class="card"> <h3>${productoCarrito.nombre}</h3> <img src="${productoCarrito.foto}" width="150"> <p>Cantidad: ${productoCarrito.cantidad}</p> </div> `;
+		if(productoCarrito.usuario == usuarioActual.correo) {
+			let monto = Number(productoCarrito.precio) / (1 + Number(productoCarrito.iva) / 100);
+			let iva = Number(productoCarrito.precio) - monto;
+			sumaSinIva += monto
+			sumaIva += iva
+			sumaTotal += Number(productoCarrito.precio)
+			carrito +=` <div class="card"> <h3>${productoCarrito.nombre}</h3> <img src="${productoCarrito.foto}" width="150"> <p>Cantidad: ${productoCarrito.cantidad}</p> </div> `;
+		}
 	}
 	let total = `<div class="card"> <h3>Resumen de la compra:</h3> Monto (sin IVA): ${sumaSinIva.toFixed(2)} <br> IVA: $${sumaIva.toFixed(2)} <br><br> <h3>TOTAL: $${sumaTotal.toFixed(2)}</h3> </div>`
 	document.getElementById("micarrito").innerHTML = carrito

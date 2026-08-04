@@ -13,14 +13,16 @@ function resumenCompra() {
 	let nombreProducto = "";
 	for(let i = 0; i < productosCarrito.length; i++) {
 		let productoCarrito = productosCarrito[i];
-		let monto = Number(productoCarrito.precio) / (1 + Number(productoCarrito.iva) / 100);
-		let iva = Number(productoCarrito.precio) - monto;
-		sumaSinIva += monto;
-		sumaIva += iva;
-		sumaTotal += Number(productoCarrito.precio);
-		carrito += ` <div class="card"> <h3>${productoCarrito.nombre}</h3> <img src="${productoCarrito.foto}" width="150"> <p>Cantidad: ${productoCarrito.cantidad}</p> </div> `;
-		cantidadProducto += productoCarrito.cantidad;
-		nombreProducto += `Producto: ${productoCarrito.nombre}. Cantidad: ${productoCarrito.cantidad} <br>`;
+		if(productoCarrito.usuario == usuarioActual.correo) {
+			let monto = Number(productoCarrito.precio) / (1 + Number(productoCarrito.iva) / 100);
+			let iva = Number(productoCarrito.precio) - monto;
+			sumaSinIva += monto;
+			sumaIva += iva;
+			sumaTotal += Number(productoCarrito.precio);
+			carrito += ` <div class="card"> <h3>${productoCarrito.nombre}</h3> <img src="${productoCarrito.foto}" width="150"> <p>Cantidad: ${productoCarrito.cantidad}</p> </div> `;
+			cantidadProducto += productoCarrito.cantidad;
+			nombreProducto += `Producto: ${productoCarrito.nombre}. Cantidad: ${productoCarrito.cantidad} <br>`;
+		}
 	};
 
 	let ventaRealizada = new Venta (
