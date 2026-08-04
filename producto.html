@@ -10,7 +10,19 @@
 		<div class="main-container">
 			<div class="container">
 				<h2>Detalles del producto</h2>
-
+				<div class="container">
+					<div class="menu">
+						<label for="tipoConversion">Cotizacion:</label>
+							<select id="tipoConversion" class="filter-btn">
+								<option value="">Peso Uruguayo</option>
+								<option value="dolar">Dolar Americano</option>
+								<option value="euro">Euro</option>
+								<option value="peso-argentino">Peso Argentino</option>
+							</select>
+						</label>
+						<p>Conoce las cotizaciones</p>
+					</div>
+				</div>
 				<form id="form-producto">
 					<div class="producto-detalle">
 						<div class="producto-imagen">
@@ -28,8 +40,9 @@
 								<input class="buscador" type="number" id="agregarCantProducto" name="agregarCantProducto" value="1" min="1">
 							</div>
 							<br>
-
-							<button class="btn btn-primary" type="submit">Agregar al carrito</button>
+							<div id="enviarBtn">
+								<button class="btn btn-primary" type="submit">Agregar al carrito</button>
+							</div>
 							<div id="faltaStock"></div>
 							<button class="btn btn-secondary" type="button" onclick="window.location.href='menu.html'">Volver al menú principal</button>
 						</div>
@@ -40,6 +53,7 @@
 
 		<script src="scripts/base/storage.js"></script>
 		<script src="scripts/base/autenticacion.js"></script>
+		<script src="scripts/clases/moneda.js"></script>
 		<script src="scripts/catalogo/producto.js"></script>
 	</body>
 </html>

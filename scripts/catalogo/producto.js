@@ -16,6 +16,23 @@ document.getElementById("precioProducto").innerHTML = `Precio: $${precioNombre}`
 document.getElementById("img").src = fotoProducto;
 let precioAlCarrito = Number(precioNombre);
 
+document.addEventListener("click",function() {
+	let conversion = document.getElementById("tipoConversion").value
+	let precioFinal;
+	if(conversion == "dolar") {
+		precioFinal = convertirPrecio(precioAlCarrito,"USD")
+	} else if(conversion == "euro") {
+		precioFinal = convertirPrecio(precioAlCarrito,"EUR")
+	} else if(conversion == "peso-argentino") {
+		precioFinal = convertirPrecio(precioAlCarrito,"ARS")
+	} else(
+		precioFinal = precioNombre
+	)
+	
+	document.getElementById("precioProducto").innerHTML = `Precio: $${precioFinal}`
+})
+	
+
 document.addEventListener("DOMContentLoaded",function(){
 	let formProducto = document.getElementById("form-producto");
 	if(formProducto) {
@@ -76,6 +93,7 @@ function avisarStock() {
 		let producto = productos[i]
 		if(producto.nombreProducto === productoNombre) {
 			if(producto.stockProducto === 0) {
+				document.getElementById("enviarBtn").innerHTML = "";
 				document.getElementById("faltaStock").innerHTML = `<button class="btn btn-secondary" type="button" onclick="alert('¡Se ha informado!')">¡Informar falta de stock!</button>`
 				return;
 			}
