@@ -19,7 +19,7 @@ h2 {
 }
 
 /* Navbar */
-.navbar {
+.mp-navbar {
     background-color: #27334d;
     color: white;
     padding: 10px 20px;
@@ -29,7 +29,7 @@ h2 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.navbar-container {
+.mp-navbar-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -37,7 +37,7 @@ h2 {
     align-items: center;
 }
 
-.navbar-title h1 {
+.mp-navbar-title h1 {
     margin: 0;
     color: white;
     border: none;
@@ -45,12 +45,12 @@ h2 {
     font-size: 20px;
 }
 
-.navbar-menu {
+.mp-navbar-menu {
     display: flex;
     gap: 10px;
 }
 
-.navbar-menu a, .navbar-menu button {
+.mp-navbar-menu a, .navbar-menu button {
     background-color: #ffb347;
     color: #fff;
     text-decoration: none;
@@ -63,9 +63,19 @@ h2 {
     transition: all 0.3s ease;
 }
 
-.navbar-menu a:hover, .navbar-menu button:hover {
+.mp-navbar-menu a:hover, .navbar-menu button:hover {
     background-color: #ff9500;
     transform: translateY(-2px);
+}
+
+#carouselExampleAutoplaying {
+    max-width: 2130px;
+    margin: 20px auto;
+}
+
+#carouselExampleAutoplaying img {
+    height: 440px;
+    object-fit: cover;
 }
 
 /* Contenedor principal */

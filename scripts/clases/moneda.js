@@ -4,9 +4,7 @@ let conversionUnoAUno = leerDeStorage("conversionesMonedas",[]);
 
 async function obtenerCotizaciones() {
   try {
-    const respuesta = await fetch(
-		"https://api.frankfurter.dev/v2/rates?base=UYU&quotes=EUR,USD,ARS"
-	);
+    const respuesta = await fetch("https://api.frankfurter.dev/v2/rates?base=UYU&quotes=EUR,USD,ARS");
     
     if (!respuesta.ok) {
       throw new Error('Hubo un problema con la petición');
