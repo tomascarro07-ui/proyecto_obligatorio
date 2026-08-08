@@ -4,6 +4,10 @@ function inicializarProductos() {
 	if (productos.length > 0) {
 		return;
 	}
+		
+	const ivaExtento = 0;
+	const ivaMinimo = 10;
+	const ivaBasico = 22;
 
 	productos = [
 		new Producto(
@@ -11,7 +15,7 @@ function inicializarProductos() {
 			"Teclado mecanico Redragon Kumara K552",
 			12,
 			1890,
-			10,
+			ivaMinimo,
 			"img/teclado-mecanico-redragon-kumara-k552.png",
 			"teclados"
 		),
@@ -21,7 +25,7 @@ function inicializarProductos() {
 			"Mouse Logitech G203 Lightsync",
 			15,
 			1299,
-			22,
+			ivaBasico,
 			"img/mouse-logitech-g203-lightsync.png",
 			"mouses"
 		),
@@ -31,7 +35,7 @@ function inicializarProductos() {
 			"Auriculares HyperX Cloud Stinger",
 			8,
 			2490,
-			10,
+			ivaMinimo,
 			"img/hyperx-cloud-stinger.png",
 			"auriculares"
 		),
@@ -41,7 +45,7 @@ function inicializarProductos() {
 			"Mousepad XL gamer",
 			20,
 			590,
-			0,
+			ivaExtento,
 			"img/mousepad-xl-gamer.png",
 			"mouses"
 		),
@@ -51,7 +55,7 @@ function inicializarProductos() {
 			"Teclado Logitech K120",
 			25,
 			899,
-			22,
+			ivaBasico,
 			"img/teclado-logitech-k120.png",
 			"teclados"
 		),
@@ -61,7 +65,7 @@ function inicializarProductos() {
 			"Mouse inalambrico Logitech M185",
 			18,
 			990,
-			10,
+			ivaMinimo,
 			"img/mouse-inalambrico-logitech-m185.png",
 			"mouses"
 		),
@@ -71,7 +75,7 @@ function inicializarProductos() {
 			"Auriculares Logitech H390 USB",
 			10,
 			1790,
-			0,
+			ivaExtento,
 			"img/auriculares-logitech-h390-usb.png",
 			"auriculares"
 		),
@@ -81,18 +85,18 @@ function inicializarProductos() {
 			"Microfono Fifine K669",
 			6,
 			2990,
-			10,
+			ivaMinimo,
 			"img/microfono-fifine-k669.png",
 			"microfonos"
 		),
 
 		new Producto(
 			9,
-			"Webcam Full HD 1080p",
+			"Logitech C920",
 			9,
 			2499,
-			22,
-			"img/webcam-full-hd-1080p.png",
+			ivaBasico,
+			"img/logitech-c920.png",
 			"webcams"
 		),
 
@@ -101,7 +105,7 @@ function inicializarProductos() {
 			"Joystick USB PC",
 			14,
 			1190,
-			0,
+			ivaExtento,
 			"img/joystick-usb-pc.png",
 			"joysticks"
 		)
