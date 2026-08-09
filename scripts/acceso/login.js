@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded",function() {
 					"Administrador",
 				);
 				guardarEnStorage("sesionActual",sesionAdmin);
-				window.location.href = "menu.html";
+				window.location.href = "index.html";
 				return;
 			};
-			login(correoUsuario,contraseniaUsuario,"menu.html");
+			login(correoUsuario,contraseniaUsuario,"index.html");
 		});
 	};
 });

@@ -42,7 +42,6 @@ function resumenCompra() {
 	ventasRealizadas.push(ventaRealizada);
 	guardarEnStorage("comprasRealizadas",ventasRealizadas);
 	guardarEnStorage("productosRegistrados",productos);
-	vaciarCarrito();
 	let total = `TOTAL: $${sumaTotal.toFixed(2)}`;
 	document.getElementById("micarrito").innerHTML = carrito;
 	document.getElementById("totalCompra").innerHTML = total;
@@ -62,11 +61,5 @@ function borrarCarrito() {
 		};
 	};
 	guardarEnStorage("productosRegistrados",productos);
-	vaciarCarrito();
 	return;
 };
-
-function vaciarCarrito() {
-	guardarEnStorage("productosMiCarrito",[]);
-}
-

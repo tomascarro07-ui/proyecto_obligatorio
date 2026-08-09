@@ -151,7 +151,7 @@ h2 {
 }
 
 /* Botones */
-.btn {
+.mp-btn {
     display: inline-block;
     margin: 10px 5px;
     padding: 12px 24px;
@@ -167,37 +167,37 @@ h2 {
     font-size: 16px;
 }
 
-.btn:hover {
+.mp-btn:hover {
     background-color: #1a2231;
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-.btn-primary {
+.mp-btn-primary {
     background-color: #36468e;
 }
 
-.btn-primary:hover {
+.mp-btn-primary:hover {
     background-color: #1a2231;
 }
 
-.btn-secondary {
+.mp-btn-secondary {
     background-color: #6780f1;
 }
 
-.btn-secondary:hover {
+.mp-btn-secondary:hover {
     background-color: #1a2231;
 }
 
-.btn-success {
+.mp-btn-success {
     background-color: #66bb6a;
 }
 
-.btn-success:hover {
+.mp-btn-success:hover {
     background-color: #4caf50;
 }
 
-.btn-small {
+.mp-btn-small {
     padding: 8px 16px;
     font-size: 14px;
     background-color: #36468e;
@@ -595,7 +595,7 @@ a:hover {
     color: #ef5350;
     font-weight: bold;
 }
-.card {
+.mp-card {
     background: #20283a;
     border-radius: 8px;
     padding: 20px;

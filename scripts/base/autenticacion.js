@@ -15,16 +15,14 @@ function login(email,contrasenia,destino) {
 };
 
 function validarSesion() {
-	let userActual = leerDeStorage("sesionActual",null);
-	if(!userActual) {
-		window.location.href = "login.html";
-	};
-	return userActual;
-};
+    let userActual = leerDeStorage("sesionActual", null);
+    return userActual;
+}
 
 function cerrarSesion() {
 	let userActual = guardarEnStorage("sesionActual",null);
-	window.location.href = "login.html";
+	window.location.href = "index.html";
+	return;
 };
 
 function sesionActiva(correo) {

@@ -23,11 +23,11 @@ function mostrarCatalogo(tipo) {
 	for(let i = 0; i < productos.length; i++) {
 		let producto = productos[i];
 		if(producto.tipoProducto === tipo || tipo === "todas" || tipo === "") {
-			catalogo +=`<div class="producto-card"> <img class="producto-img" src="${producto.imagenProducto}"> <div class="producto-info"> <h3>${producto.nombreProducto}</h3> <p>$${producto.precioFinal}</p></div> <div class="producto-btn"> <button class="btn btn-primary" onclick="window.location.href='producto.html?nombre=${producto.nombreProducto}&stock=${producto.stockProducto}&precio=${producto.precioFinal}&img=${producto.imagenProducto}&iva=${producto.ivaProducto}'">Ver detalles</button> </div> </div>`;
+			catalogo +=`<div class="producto-card"> <img class="producto-img" src="${producto.imagenProducto}"> <div class="producto-info"> <h3>${producto.nombreProducto}</h3> <p>$${producto.precioFinal}</p></div> <div class="producto-btn"> <button class="mp-btn mp-btn-primary" onclick="window.location.href='producto.html?nombre=${producto.nombreProducto}&stock=${producto.stockProducto}&precio=${producto.precioFinal}&img=${producto.imagenProducto}&iva=${producto.ivaProducto}'">Ver detalles</button> </div> </div>`;
 		};
 	};
 	if(tipo !== "todas") {
-		document.getElementById("catalogoProductos").innerHTML = `<button class="btn btn-small" onclick="eliminarFiltro()">Eliminar Filtro</button><br><br>${catalogo}`;
+		document.getElementById("catalogoProductos").innerHTML = `<button class="mp-btn btn-small" onclick="eliminarFiltro()">Eliminar Filtro</button><br><br>${catalogo}`;
 	} else {
 		document.getElementById("catalogoProductos").innerHTML =`${catalogo}`;
 	};
