@@ -26,44 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
 		formProductos.addEventListener("submit",function(e) {
 			e.preventDefault();
 			
-			if((document.getElementById("nombreProducto").value).replaceAll(" ", "") === "") {
-				alert("¡El nombre del producto no puede estar vacío!");
-				return;
-			}
 			
-			if(existeProductoRegistrado(document.getElementById("nombreProducto").value)) {
-				alert("¡Este producto ya esta registrado!");
-				return;
-			}
-		
-			let registroProducto = new Producto (
-				Number(document.getElementById("idProducto").value),
-				document.getElementById("nombreProducto").value,
-				Number(document.getElementById("cantidadProducto").value),
-				Number(document.getElementById("precioProducto").value),
-				Number(document.getElementById("ivaProducto").value),
-				document.getElementById("imgProducto").value,
-				document.getElementById("filtroTipo").value
-			);
-
-			productos.push(registroProducto);
-			guardarEnStorage("productosRegistrados",productos);
-			alert("¡Producto registrado correctamente!");
 			mostrarCatalogo();
 			limpiarControles();
 		});
 	};
 });
-
-function existeProductoRegistrado(producto) {
-	let productos = leerDeStorage("productosRegistrados",[]);
-	for(let i = 0; i < productos.length; i++) {
-		if(productos[i].nombreProducto.toLowerCase().replaceAll(" ", "") === producto.toLowerCase().replaceAll(" ", "")) {
-			return true;
-		};
-	};
-	return false;
-};
 
 function mostrarCatalogo() {
 	productos = leerDeStorage("productosRegistrados",[]);
