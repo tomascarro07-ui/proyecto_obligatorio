@@ -1,3 +1,7 @@
+import { GestorProducto } from "../gestores/gestorProductos.js";
+
+let gestorProductos = new GestorProducto();
+
 function inicializarProductos() {
 	let productos = leerDeStorage("productosRegistrados", []);
 
@@ -9,8 +13,7 @@ function inicializarProductos() {
 	const ivaMinimo = 10;
 	const ivaBasico = 22;
 
-	productos = [
-		new Producto(
+	gestorProductos.agregarProducto (
 			1,
 			"Teclado mecanico Redragon Kumara K552",
 			12,
@@ -18,9 +21,9 @@ function inicializarProductos() {
 			ivaMinimo,
 			"img/teclado-mecanico-redragon-kumara-k552.png",
 			"teclados"
-		),
+	)
 
-		new Producto(
+	gestorProductos.agregarProducto (
 			2,
 			"Mouse Logitech G203 Lightsync",
 			15,
@@ -28,9 +31,9 @@ function inicializarProductos() {
 			ivaBasico,
 			"img/mouse-logitech-g203-lightsync.png",
 			"mouses"
-		),
+	)
 
-		new Producto(
+	gestorProductos.agregarProducto (
 			3,
 			"Auriculares HyperX Cloud Stinger",
 			8,
@@ -38,9 +41,9 @@ function inicializarProductos() {
 			ivaMinimo,
 			"img/hyperx-cloud-stinger.png",
 			"auriculares"
-		),
+	)
 
-		new Producto(
+	gestorProductos.agregarProducto (
 			4,
 			"Mousepad XL gamer",
 			20,
@@ -48,9 +51,9 @@ function inicializarProductos() {
 			ivaExtento,
 			"img/mousepad-xl-gamer.png",
 			"mouses"
-		),
+	)
 
-		new Producto(
+	gestorProductos.agregarProducto (
 			5,
 			"Teclado Logitech K120",
 			25,
@@ -58,9 +61,9 @@ function inicializarProductos() {
 			ivaBasico,
 			"img/teclado-logitech-k120.png",
 			"teclados"
-		),
+	)
 
-		new Producto(
+	gestorProductos.agregarProducto (
 			6,
 			"Mouse inalambrico Logitech M185",
 			18,
@@ -68,9 +71,9 @@ function inicializarProductos() {
 			ivaMinimo,
 			"img/mouse-inalambrico-logitech-m185.png",
 			"mouses"
-		),
+	)
 
-		new Producto(
+	gestorProductos.agregarProducto (
 			7,
 			"Auriculares Logitech H390 USB",
 			10,
@@ -78,9 +81,9 @@ function inicializarProductos() {
 			ivaExtento,
 			"img/auriculares-logitech-h390-usb.png",
 			"auriculares"
-		),
+	)
 
-		new Producto(
+	gestorProductos.agregarProducto (
 			8,
 			"Microfono Fifine K669",
 			6,
@@ -88,9 +91,9 @@ function inicializarProductos() {
 			ivaMinimo,
 			"img/microfono-fifine-k669.png",
 			"microfonos"
-		),
+	)
 
-		new Producto(
+	gestorProductos.agregarProducto (
 			9,
 			"Logitech C920",
 			9,
@@ -98,21 +101,22 @@ function inicializarProductos() {
 			ivaBasico,
 			"img/logitech-c920.png",
 			"webcams"
-		),
+	)
 
-		new Producto(
+	gestorProductos.agregarProducto (
 			10,
-			"Joystick USB PC",
+			"Joystick USB  PC",
 			14,
 			1190,
 			ivaExtento,
 			"img/joystick-usb-pc.png",
 			"joysticks"
-		)
-	];
-
-	guardarEnStorage("productosRegistrados", productos);
+	)
+	/* Borre guardar en storage ya que el gestor tiene un almacenador de los productos, por lo tanto cada vez que se
+	guardaban los productos en este local storage que teniamos aca, no se guardaban nunca en el del gestor */
 }
+
+inicializarProductos();
 
 
 function inicializarFiltro() {
@@ -144,3 +148,5 @@ function inicializarFiltro() {
 ]
 	guardarEnStorage("filtrosRegistrados",filtros);
 }
+
+inicializarFiltro()

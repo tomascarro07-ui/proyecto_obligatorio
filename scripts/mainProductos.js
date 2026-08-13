@@ -28,5 +28,8 @@ if(formProductos) {
 			document.getElementById("imgProducto").value,
 			document.getElementById("filtroTipo").value
 		);
+		alert("¡Producto registrado correctamente!");
+		
+		gestorProductos.mostrarCatalogo();
 	});
 }

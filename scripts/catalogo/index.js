@@ -1,8 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-	inicializarProductos();
-	inicializarFiltro();
-});
-
 let usuarioActual = validarSesion();
 
 if(!usuarioActual) {
@@ -17,8 +12,5 @@ if(!usuarioActual) {
 	} else {
 		document.getElementById("usuario").innerHTML = `<div class="menu"><a href="venta_usuario.html">Mis compras</a> <a href="guia_uso.html">Ayuda</a> <a href="cotizaciones.html">Cotizaciones</a>`;
 	};
-
-
-
 }
 
