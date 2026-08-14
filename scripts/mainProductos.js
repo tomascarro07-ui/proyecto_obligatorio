@@ -29,7 +29,6 @@ if(formProductos) {
 			document.getElementById("filtroTipo").value
 		);
 		alert("¡Producto registrado correctamente!");
-		
-		gestorProductos.mostrarCatalogo();
+
 	});
 }

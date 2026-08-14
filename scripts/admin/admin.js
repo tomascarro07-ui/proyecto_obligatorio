@@ -5,7 +5,7 @@ let usuarioActual = validarSesion();
 
 import { GestorProducto } from "../gestores/gestorProductos.js";
 let gestorProductos = new GestorProducto();
-gestorProductos.mostrarCatalogo();
+
 
 if(!usuarioActual.esAdministrador){
     alert("Acceso denegado");
@@ -22,49 +22,42 @@ document.addEventListener("DOMContentLoaded", function() {
 		opcion.textContent = filtros[i].nombreFiltro;
 		lista.appendChild(opcion);
 	}
-	
-	let formProductos = document.getElementById("form-productos");
-	
-	if(formProductos) {
-		formProductos.addEventListener("submit",function(e) {
-			e.preventDefault();
-			
-			
-			
-			limpiarControles();
-		});
-	};
 });
+
+function mostrarCatalogo() {
+		productos = leerDeStorage("productosRegistrados",[]);
+		let catalogo = "";
+		for(let i = 0; i < productos.length; i++) {
+			let producto = productos[i];
+			if(producto.stockProducto > 0) {
+				catalogo += `<div class="mp-card"> <h3>${producto.nombreProducto}</h3> <br> Tipo de producto: ${producto.tipoProducto} <br> Stock del producto: ${producto.stockProducto} <br> Precio del producto: ${producto.precioProducto} <br> Iva del producto: ${producto.ivaProducto}% <br> <button type="button" class="mp-btn mp-btn-primary" onclick="window.location.href='editar_producto_admin.html?nombre=${producto.nombreProducto}&stock=${producto.stockProducto}&precio=${producto.precioProducto}&img=${producto.imagenProducto}&iva=${producto.ivaProducto}&tipo=${producto.tipoProducto}'">Editar Producto</button> <button type="button" class="mp-btn mp-btn-secondary btn-borrar" data-nombre="${producto.nombreProducto}">Borrar Producto</button></div>`;
+			} else {
+				catalogo += `<div class="mp-card"> <h3>${producto.nombreProducto}</h3> <br> Tipo de producto: ${producto.tipoProducto} <br> <b><p style="color:red">¡Falta de Stock. Verificar!</p></b> Precio del producto: ${producto.precioProducto} <br> Iva del producto: ${producto.ivaProducto}% <br> <button type="button" class="mp-btn mp-btn-primary" onclick="window.location.href='editar_producto_admin.html?nombre=${producto.nombreProducto}&stock=${producto.stockProducto}&precio=${producto.precioProducto}&img=${producto.imagenProducto}&iva=${producto.ivaProducto}&tipo=${producto.tipoProducto}'">Editar Producto</button> <button type="button" class="mp-btn mp-btn-secondary" data-nombre="${producto.nombreProducto}">Borrar Producto</button></div>`;
+			}
+		}
+		document.getElementById("catalogoProductos").innerHTML = catalogo;
+		let botones = document.querySelectorAll("[data-nombre]");
+		botones.forEach(function(boton) {
+
+		boton.addEventListener("click", function() {
+			let nombre = boton.dataset.nombre;
+			borrarProducto(nombre);
+		});
+
+	});
+};
+
+mostrarCatalogo();
 
 function borrarProducto(nombre) {
 	document.getElementById("btnConfirmarEliminar").onclick = function() {
-		eliminarProducto(nombre);
+		gestorProductos.eliminarProducto(nombre);
+		location.reload()
 	};
 
 	let modal = new bootstrap.Modal(document.getElementById("modalEliminarProducto"));
 	modal.show();
 }
-
-function eliminarProducto(nombre) {
-	for(let i = 0; i < productos.length; i++) {
-		let producto = productos[i];
-		if(producto.nombreProducto === nombre) {
-			if(eliminarProducto) {
-				productos.splice(i,1);
-				guardarEnStorage("productosRegistrados",productos);
-				for(let i = 0; i < productosCarrito.length; i++) {
-					let productoCarrito = productosCarrito[i];
-					if(producto.nombreProducto === productoCarrito.nombre) {
-						productosCarrito.splice(i,1);
-						guardarEnStorage("productosMiCarrito",productosCarrito);
-					};
-				};
-			};
-			location.reload();
-			break;
-		};
-	};
-};
 
 function limpiarControles() {
 	document.getElementById("nombreProducto").value = "";
