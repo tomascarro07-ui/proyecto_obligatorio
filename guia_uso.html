@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mundo Periféricos - Guía de Uso</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+	<body>
+		
+		<div class="container">
+			<div>
+						<a href="index.html" class="mp-btn mp-btn-secondary">← Volver atras</a>
+					</div>
+			<h1>Guía de Uso - Mundo Periféricos</h1>
+			
+			<div class="card">
+				<h1>Primeros pasos</h1>
+
+				<h2>Crear una cuenta</h2>
+				<p>Para entrar a la tienda primero hay que registrarse. En la pantalla inicial se pide:</p>
+				<ul>
+					<li>Nombre</li>
+					<li>Correo electrónico (tiene que ser único, no se puede repetir entre usuarios)</li>
+					<li>Contraseña (mínimo 8 caracteres)</li>
+				</ul>
+				<p>Una vez que completás el formulario y le das a "Registrarse", el sistema te lleva directo a la pantalla de Login con tu correo ya cargado, así no lo tenés que volver a escribir.</p>
+
+				<h2>Iniciar sesión</h2>
+				<p>Con tu correo y contraseña entrás desde "Logearse". Si alguno de los dos datos está mal, el sistema te avisa con un mensaje y te deja reintentar.</p>
+				<p>Mientras no cierres sesión, el sistema te reconoce en todas las páginas de la tienda. Si intentás entrar a cualquier sección sin haber iniciado sesión, te redirecciona directo al Login.</p>
+
+				<h2>Cerrar sesión</h2>
+				<p>Desde el menú principal está el botón "Cerrar sesión", arriba a la derecha. Te saca de la cuenta y te devuelve al Login. El carrito que tenías cargado no se pierde: queda guardado para la próxima vez que inicies sesión.</p>
+			</div>
+			
+			<div class="card">
+				<h1>El catálogo y la búsqueda</h1>
+
+				<h2>Ver los productos</h2>
+				<p>Al entrar, el Menú Principal te muestra el catálogo completo de periféricos: teclados, mouses, auriculares, micrófonos, joysticks y webcams. Cada producto se ve con su nombre, una imagen y un botón "Ver detalles".</p>
+				<p>Arriba del catálogo hay una sección para "Filtrar por" la cuál muestra solo una categoría (por ejemplo, solo teclados). Si lo dejás en "Seleccione una opción", se muestran todos los productos.</p>
+
+				<h2>Buscar un producto</h2>
+				<p>Al lado del saludo de bienvenida hay un buscador. Escribís el nombre del producto o parte del nombre (mínimo 2 letras) y le das a "Buscar". Te lleva a una pantalla aparte con los resultados que coinciden, sin importar mayúsculas o minúsculas.</p>
+				<p>Si ningún producto coincide con lo que buscaste, en vez de resultados te aparece el mensaje "No hemos encontrado ningún producto...".</p>
+
+				<h2>Ver el detalle de un producto</h2>
+				<p>Al hacer clic en "Ver detalles" desde el catálogo entrás a la ficha del producto, donde se ve:</p>
+				<ul>
+					<li>Nombre del producto</li>
+					<li>Imagen</li>
+					<li>Stock disponible</li>
+					<li>Precio (ya con el IVA incluido)</li>
+				</ul>
+				<p>Desde ahí elegís la cantidad que querés comprar y le das a "Agregar al carrito".</p>
+				<p>Si el producto no tiene stock disponible (0 unidades), en lugar del botón de agregar al carrito aparece el botón "¡Informar falta de stock!". Al presionarlo, te muestra el aviso "¡Se ha informado!".</p>
+			</div>
+			
+			<div class="card">
+				<h1>El carrito de compras</h1>
+
+				<h2>Agregar productos</h2>
+				<p>Cuando agregás un producto al carrito, el sistema chequea que haya stock suficiente. Si pedís más unidades de las que hay disponibles, te avisa que no hay esa cantidad. Si ponés un número en cero o negativo, también te lo rechaza.</p>
+				<p>Si el producto ya estaba en tu carrito y lo volvés a agregar, se suma la cantidad nueva a la que ya tenías y se actualiza el subtotal.</p>
+				<p>Cada vez que algo entra al carrito, esa cantidad se descuenta del stock general de la tienda. El stock que ves en el catálogo es el que queda disponible para todos, no solo para vos.</p>
+
+				<h2>Ver mi carrito</h2>
+				<p>Desde "Mi carrito" (botón en el Menú Principal) ves el listado de todo lo que agregaste: nombre, precio por unidad, cantidad y subtotal de cada producto, junto a su imagen.</p>
+				<p>Abajo del listado aparece el resumen de la compra con tres datos:</p>
+				<ul>
+					<li>Monto sin IVA</li>
+					<li>IVA</li>
+					<li>Total a pagar</li>
+				</ul>
+				<p>Estos montos se calculan producto por producto a partir del IVA que tiene cada uno (10%, 22% o exento), así que el total siempre se ajusta según el IVA de cada producto que tengas cargado.</p>
+				<p>Si tu carrito está vacío, no se muestran productos ni resumen, y tampoco aparecen los botones "Continuar" (para pasar a confirmar la compra) ni "Eliminar mi carrito". Hace falta tener al menos un producto cargado para poder avanzar.</p>
+
+				<h2>Editar la cantidad de un producto en el carrito</h2>
+				<p>Desde el botón "Editar Producto" de cada ítem del carrito podés cambiar cuántas unidades querés. El sistema reacomoda el stock de la tienda según la diferencia:</p>
+				<ul>
+					<li>Si subís la cantidad, te descuenta esa diferencia del stock general.</li>
+					<li>Si la bajás, te devuelve esa diferencia al stock general.</li>
+				</ul>
+				<p>Si pedís más de lo que hay disponible (sumando lo que ya tenías en el carrito más el stock libre), te avisa que no hay esa cantidad y no te deja guardar.</p>
+
+				<h2>Eliminar un producto del carrito</h2>
+				<p>El botón "Eliminar Producto" de cada ítem te pide confirmación y, al aceptar, sacá ese producto del carrito y devuelve esas unidades al stock general.</p>
+
+				<h2>Vaciar todo el carrito</h2>
+				<p>El botón "Eliminar mi carrito" (abajo de todo en la pantalla del carrito) también pide confirmación. Al aceptar, devuelve al stock todas las unidades de todos los productos que tenías cargados y te deja el carrito completamente vacío.</p>
+
+				<h2>Confirmar la compra</h2>
+				<p>Cuando ya tenés todo lo que querés en el carrito, el botón "Confirmar compra" te lleva a una pantalla de resumen donde podés ver los productos que vas a comprar y el total a pagar antes de cerrar la operación.</p>
+				<p>Desde ahí tenés dos opciones:</p>
+				<ul>
+					<li>"Volver al carrito": si querés cambiar algo antes de confirmar.</li>
+					<li>"Confirmar compra": cierra la compra definitivamente.</li>
+				</ul>
+
+				<h2>Compra realizada</h2>
+				<p>Al confirmar, el sistema registra la compra, vacía tu carrito y te muestra una pantalla de confirmación con el detalle de lo que compraste y el total. Desde ahí podés volver al catálogo para seguir navegando.</p>
+
+				<h2>Mis compras</h2>
+				<p>Desde el botón "Mis compras", ubicado arriba a la izquierda en el Menú Principal, podés ver el historial de todas las compras que realizaste en la tienda.</p>
+				<p>Ahí se muestra el detalle de cada compra: los productos comprados, la cantidad de cada uno, el subtotal, el IVA y el total pagado. Así podés consultar en cualquier momento qué compraste antes, sin necesidad de contactar al administrador.</p>
+			</div>
+			
+			<div class="card">
+			
+				<h1>Panel de Administrador</h1>
+				<p>Esta sección solo la ven las cuentas marcadas como administrador. Si tu usuario tiene ese permiso, en el Menú Principal te van a aparecer los botones "Agregar productos" y "Ventas realizadas", desde donde accedés a todas las funciones de administrador.</p>
+				<p>Si una cuenta sin permisos de administrador intenta entrar directamente a alguna de estas pantallas, el sistema muestra el mensaje "Acceso denegado" y la redirige automáticamente al menú principal.</p>
+
+				<h2>Registrar un producto nuevo</h2>
+				<p>Desde el panel de Administradores se completa un formulario con:</p>
+				<ul>
+					<li>Nombre del producto</li>
+					<li>Tipo de producto (teclados, mouses, auriculares, micrófonos, joysticks o webcams)</li>
+					<li>Stock inicial</li>
+					<li>Precio base</li>
+					<li>IVA (10% mínimo, 22% básico, o exento)</li>
+					<li>Imagen (una ruta o un link a una foto)</li>
+				</ul>
+				<p>El sistema calcula solo el precio final sumándole el IVA al precio base, así que no hace falta calcularlo a mano. No se puede registrar dos veces un producto con el mismo nombre: si ya existe, te avisa y no lo deja guardar.</p>
+
+				<h2>Editar un producto existente</h2>
+				<p>Desde "Editar Producto", en cada ítem del catálogo del panel admin, se abre el mismo formulario con los datos ya cargados. Podés modificar cualquier campo (nombre, stock, precio, IVA o imagen) y al guardar se actualiza el precio final automáticamente con los nuevos valores.</p>
+
+				<h2>Administrar filtros de productos</h2>
+				<p>Desde el panel de Administradores también es posible registrar nuevos filtros y eliminar los existentes. Los filtros se utilizan para clasificar los productos dentro del catálogo. Al crear un producto, el administrador puede seleccionar uno de los filtros registrados, y si un filtro deja de ser necesario puede eliminarlo desde la gestión de filtros.</p>
+				<p>Al borrar un filtro (pidiendo confirmación previa), los productos que tenían asignada esa categoría no se eliminan: siguen viéndose en el catálogo, pero quedan sin tipo asignado y ya no van a aparecer cuando se filtre por esa categoría.</p>
+				
+				<h2>Borrar un producto</h2>
+				<p>El botón "Borrar Producto" pide confirmación antes de eliminarlo. Si ese producto estaba en el carrito de algún usuario, también se quita de ahí para evitar que quede una compra con un producto que ya no existe en la tienda.</p>
+
+				<h2>Ver ventas realizadas</h2>
+				<p>Desde el Menú Principal, el administrador también tiene el botón "Ventas realizadas". Ahí se muestra el historial completo de todas las compras que hicieron los usuarios: nombre del cliente, fecha, productos comprados, cantidad, subtotal, IVA y total de cada operación.</p>
+				<p>Al final de la lista aparece la ganancia total acumulada de todas las ventas registradas.</p>
+
+				<h1>Preguntas frecuentes</h1>
+
+				<h2>¿Puedo cambiar mi contraseña?</h2>
+				<p>No, esta versión no tiene esa opción. Si la perdés, tenés que registrar una cuenta nueva con otro correo.</p>
+
+				<h2>¿Por qué no puedo registrar un producto con el mismo nombre que otro?</h2>
+				<p>Porque el nombre es el dato que usa el sistema para identificar a cada producto. Si hubiera dos iguales, no sabría a cuál actualizarle el stock o cuál borrar.</p>
+
+				<h2>¿Qué pasa si agrego al carrito un producto que después el administrador borra?</h2>
+				<p>El sistema lo quita automáticamente de tu carrito en el momento en que se borra, para que no te quede una compra con algo que ya no existe en la tienda.</p>
+
+				<h2>¿El precio que veo ya tiene el IVA incluido?</h2>
+				<p>Sí. El precio final que se muestra en el catálogo y en la ficha del producto ya incluye el IVA correspondiente (10%, 22% o exento, según el producto).</p>
+
+				<h2>¿Puedo tener varios carritos o cuentas con el mismo correo?</h2>
+				<p>No, cada correo solo puede registrarse una vez. Si ya existe una cuenta con ese correo, el sistema no te deja crear otra.</p>
+				
+				<h2>¿Qué pasa si cierro el navegador con productos en el carrito?</h2>
+				<p>No se pierden. El carrito queda guardado en tu navegador hasta que decidas vaciarlo o eliminar algún producto.</p>
+				
+				<h2>¿Puedo ver productos sin haber iniciado sesión?</h2>
+				<p>No, el sistema pide que estés logueado para ver el catálogo, así que primero hay que registrarse o iniciar sesión.</p>
+			</div>
+		</div>
+	</body>
+</html>
