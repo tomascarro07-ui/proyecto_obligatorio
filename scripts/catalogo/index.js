@@ -1,4 +1,4 @@
-let usuarioActual = validarSesion();
+usuarioActual = validarSesion();
 
 if(!usuarioActual) {
 	document.getElementById("usuarioActual").innerHTML = "¡Bienvenido a Mundo Periféricos!";

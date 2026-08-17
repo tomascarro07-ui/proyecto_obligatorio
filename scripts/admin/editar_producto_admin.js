@@ -1,10 +1,4 @@
-let usuarioActual = validarSesion();
-
-if(!usuarioActual.esAdministrador){
-    alert("Acceso denegado");
-    window.location.href = "menu.html";
-}
-
+protegerPagina();
 import { GestorProducto } from "../gestores/gestorProductos.js";
 let gestorProductos = new GestorProducto();
 

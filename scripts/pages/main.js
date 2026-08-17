@@ -1,7 +1,7 @@
 // Mostrar catalogo, filtros, y elegir si editar productos, o eliminarlos, eliminando todo del admin.js
+protegerPagina();
 import { GestorProducto } from "../gestores/gestorProductos.js";
 let gestorProductos = new GestorProducto();
-protegerPagina();
 let productos = leerDeStorage("productosRegistrados",[]);
 let categorias = leerDeStorage("categoriasRegistradas",[]);
 

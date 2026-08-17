@@ -1,3 +1,5 @@
+let usuarioActual = leerDeStorage("usuariosRegistrados",[]);
+
 function login(email,contrasenia,destino) {
 	let usuario = sesionActiva(email);
 	if(!usuario) {
@@ -20,13 +22,13 @@ function validarSesion() {
 }
 
 function cerrarSesion() {
-	let userActual = guardarEnStorage("sesionActual",null);
+	userActual = guardarEnStorage("sesionActual",null);
 	window.location.href = "index.html";
 	return;
 };
 
 function sesionActiva(correo) {
-	let usuarios = leerDeStorage("usuariosRegistrados",[]);
+	usuarios = leerDeStorage("usuariosRegistrados",[]);
 	for(let i = 0; i < usuarios.length; i++) {
 		if(usuarios[i].correo === correo) {
 			return usuarios[i];
@@ -34,3 +36,16 @@ function sesionActiva(correo) {
 	};
 	return false;
 };
+
+function esAdmin() {
+    if(!usuarioActual || !usuarioActual.esAdmin) {
+        return false;
+    }
+    return true;
+}
+
+function protegerPagina() {
+    if(!esAdmin()) {
+        window.location.href = "index.html";
+    }
+}

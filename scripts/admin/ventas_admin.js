@@ -1,10 +1,6 @@
-let usuarioActual = validarSesion();
+protegerPagina();
 let ventasRealizadas = leerDeStorage("comprasRealizadas",[])
-if(!usuarioActual.esAdministrador){
-    alert("Acceso denegado");
-    window.location.href = "menu.html";
-}
-	
+
 function mostarVentas() {
 	let ventas = "";
 	let ventaTotal = 0;
