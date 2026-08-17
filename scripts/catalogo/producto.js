@@ -11,7 +11,7 @@ let precioNombre = 0;;
 for(let i = 0; i < productos.length; i++) {
 	let producto = productos[i];
 	if(productoNombre === producto.nombreProducto) {
-		document.getElementById("nombreProducto").innerHTML = `Nombre: ${producto.productoNombre}`
+		document.getElementById("nombreProducto").innerHTML = `Nombre: ${producto.nombreProducto}`
 		document.getElementById("cantidadProducto").innerHTML = `Stock: ${producto.stockProducto}`;
 		document.getElementById("precioProducto").innerHTML = `Precio: $${producto.precioProducto}`;
 		document.getElementById("img").src = producto.imagenProducto;
