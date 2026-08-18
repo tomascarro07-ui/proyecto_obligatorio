@@ -43,24 +43,25 @@ export class GestorCarrito {
     //     return false;
     // }
     
-    // eliminarProducto(nombre) {
-    //     for(let i = 0; i < productos.length; i++) {
-    //         let producto = productos[i];
-    //         if(producto.nombreProducto === nombre) {
-    //             productos.splice(i,1);
-    //             guardarEnStorage("productosRegistrados",productos);
-    //             for(let i = 0; i < productosCarrito.length; i++) {
-    //                 let productoCarrito = productosCarrito[i];
-    //                 if(producto.nombreProducto === productoCarrito.nombre) {
-    //                     productosCarrito.splice(i,1);
-    //                     guardarEnStorage("productosMiCarrito",productosCarrito);
-    //                 };
-    //             };
-    //             location.reload();
-    //             break;
-    //         };
-    //     };
-    // };
+    eliminarProducto(nombre) {
+		for(let i = 0; i < productosCarrito.length; i++) {
+			let productoCarrito = productosCarrito[i]
+			if(productoCarrito.nombre === nombre && productoCarrito.usuario == usuarioActual.correo) {
+                    for(let j = 0; j < productos.length; j++) {
+                        let producto = productos[j];
+                        if(productoCarrito.nombre === producto.nombreProducto) {
+                            producto.stockProducto += Number(productoCarrito.cantidad)
+                            guardarEnStorage("productosRegistrados",productos);
+                            break;
+                        }	
+                    }
+                productosCarrito.splice(i,1)
+            }
+        }
+        guardarEnStorage("productosMiCarrito",productosCarrito)
+        location.reload();
+        return;
+    }
 
     // editarProductos(nombreOriginal,nombreProducto,tipoProducto,stockProducto,precioProducto,imgProducto,ivaProducto) {
     //     for(let i = 0; i < productos.length; i++) {

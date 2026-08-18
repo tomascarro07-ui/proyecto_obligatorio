@@ -48,7 +48,7 @@ function avisarStock() {
 		if(producto.nombreProducto === productoNombre) {
 			if(producto.stockProducto === 0) {
 				document.getElementById("enviarBtn").innerHTML = "";
-				document.getElementById("faltaStock").innerHTML = `<button class="btn btn-secondary" type="button" onclick="alert('¡Se ha informado!')">¡Informar falta de stock!</button>`
+				document.getElementById("faltaStock").innerHTML = `<button class="mp-btn mp-btn-secondary" type="button" onclick="alert('¡Se ha informado!')">¡Informar falta de stock!</button>`
 				return;
 			}
 		}

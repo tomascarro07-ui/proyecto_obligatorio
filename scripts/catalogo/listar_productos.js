@@ -27,7 +27,7 @@ function mostrarCatalogo(tipo) {
 		};
 	};
 	if(tipo !== "todas") {
-		document.getElementById("catalogoProductos").innerHTML = `<button class="mp-btn btn-small" onclick="eliminarFiltro()">Eliminar Filtro</button><br><br>${catalogo}`;
+		document.getElementById("catalogoProductos").innerHTML = `<button class="mp-btn mp-btn-small" onclick="eliminarFiltro()">Eliminar Filtro</button><br><br>${catalogo}`;
 	} else {
 		document.getElementById("catalogoProductos").innerHTML =`${catalogo}`;
 	};

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded",function(){
 		let nombre = producto.nombreProducto.toLowerCase().replaceAll(" ", "");
 		let busquedaUser = productoNombre.toLowerCase().replaceAll(" ", "")
 		if(nombre.includes(busquedaUser)) {
-			busqueda += `<div class="card"> ${producto.nombreProducto} <br> <img width="150px" src="${producto.imagenProducto}"><br> <button class="btn btn-primary" onclick="window.location.href='producto.html?nombre=${producto.nombreProducto}&stock=${producto.stockProducto}&precio=${producto.precioFinal}&img=${producto.imagenProducto}&iva=${producto.ivaProducto}'"> Ver detalles </button> <br><br><br> </div> `;
+			busqueda += `<div class="card"> ${producto.nombreProducto} <br> <img width="150px" src="${producto.imagenProducto}"><br> <button class="mp-btn mp-btn-primary" onclick="window.location.href='producto.html?nombre=${producto.nombreProducto}&stock=${producto.stockProducto}&precio=${producto.precioFinal}&img=${producto.imagenProducto}&iva=${producto.ivaProducto}'"> Ver detalles </button> <br><br><br> </div> `;
 			productosBuscados++;
 		};
 	};

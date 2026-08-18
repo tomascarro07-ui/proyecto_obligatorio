@@ -1,5 +1,3 @@
-// Mostrar catalogo, filtros, y elegir si editar productos, o eliminarlos, eliminando todo del admin.js
-protegerPagina();
 import { GestorProducto } from "../gestores/gestorProductos.js";
 let gestorProductos = new GestorProducto();
 let productos = leerDeStorage("productosRegistrados",[]);
@@ -35,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         catalogoDiv.addEventListener("click",function(e) {
             let boton = e.target;
             if(boton.dataset.accion === "editar") {
-                window.location.href=window.location.href = `editar_producto_admin.html?nombre=${boton.dataset.nombre}`
+                window.location.href = `editar_producto_admin.html?nombre=${boton.dataset.nombre}`
             } else if (boton.dataset.accion === "eliminar") {
                 document.getElementById("btnConfirmarEliminar").onclick = function() {
                     gestorProductos.eliminarProducto(boton.dataset.nombre);
