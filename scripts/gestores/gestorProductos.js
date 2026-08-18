@@ -1,7 +1,7 @@
 let productos = leerDeStorage("productosRegistrados",[]);
 let productosCarrito = leerDeStorage("productosMiCarrito",[]);
 
-import { Producto } from "../clases/producto.js";
+import { Producto } from "../modelos/producto.js";
 export class GestorProducto {
 	
 	agregarProducto(id,nombreProducto,stockProducto,precioProducto,ivaProducto,imagenProducto,tipoProducto) {

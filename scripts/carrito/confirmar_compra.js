@@ -1,5 +1,5 @@
 let productosCarrito = leerDeStorage("productosMiCarrito",[]);
-let usuarioActual = validarSesion();
+usuarioActual = validarSesion();
 
 function resumenCompra() {
 	let carrito = "<h3>Productos: </h3>"

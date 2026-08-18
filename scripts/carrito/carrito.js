@@ -1,4 +1,4 @@
-let usuarioActual = validarSesion();
+usuarioActual = validarSesion();
 let productosCarrito = leerDeStorage("productosMiCarrito",[]);
 let productos = leerDeStorage("productosRegistrados",[]);
 
@@ -58,14 +58,9 @@ function borrarCarrito() {
 function borrarProducto(nombre) {
 		for(let i = 0; i < productosCarrito.length; i++) {
 			let productoCarrito = productosCarrito[i]
-			/*El parametro "nombre" viene dado a que el nombre del producto es unico, por lo tanto
-			Verificamos que el nombre del producto en el carrito sea igual al nombre que nos dado
-			El mismo parametro.*/
 			if(productoCarrito.nombre === nombre && productoCarrito.usuario == usuarioActual.correo) {
 				let eliminarProducto = window.confirm("¿Deseas eliminar este producto de tu carrito?")
 				if(eliminarProducto) {
-				/*Este for de abajo lo que hace es buscar que producto de nuestro stock es igual al
-				nombre del producto que estamos borrando del carrito del usuario*/
 				for(let j = 0; j < productos.length; j++) {
 					let producto = productos[j];
 					if(productoCarrito.nombre === producto.nombreProducto) {

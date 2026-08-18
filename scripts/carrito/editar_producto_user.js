@@ -1,4 +1,3 @@
-let usuarioActual = validarSesion();
 let productosCarrito = leerDeStorage("productosMiCarrito",[]);
 let productos = leerDeStorage("productosRegistrados",[]);
 

@@ -1,6 +1,6 @@
 let productosCarrito = leerDeStorage("productosMiCarrito",[]);
 let productos = leerDeStorage("productosRegistrados",[]);
-let usuarioActual = validarSesion();
+usuarioActual = validarSesion();
 let ventasRealizadas = leerDeStorage("comprasRealizadas",[])
 let datosEntrega = leerDeStorage("datosCompra",[])
 
