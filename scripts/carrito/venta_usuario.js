@@ -1,5 +1,5 @@
 let ventasRealizadas = leerDeStorage("comprasRealizadas",[]);
-let usuarioActual = validarSesion();
+usuarioActual = validarSesion();
 
 function misCompras() {
 	let compras = "";

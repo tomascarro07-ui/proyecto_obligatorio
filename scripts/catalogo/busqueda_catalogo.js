@@ -1,4 +1,4 @@
-let usuarioActual = validarSesion();
+usuarioActual = validarSesion();
 let productos = leerDeStorage("productosRegistrados",[]);
 let parametros = new URLSearchParams(window.location.search);
 let productoNombre = parametros.get("nombre");
