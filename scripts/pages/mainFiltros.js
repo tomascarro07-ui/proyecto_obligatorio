@@ -6,7 +6,7 @@ function mostrarCategorias() {
 	let filtroCategoria = "";
 	for(let i = 0; i < categorias.length; i++) {
 		let categoria = categorias[i];
-			filtroCategoria += `<div class="card"> <p>${categoria.nombreCategoria}</p> <button type="button" class="mp-btn mp-btn-secondary" data-accion="eliminar" data-nombre="${categoria.nombreCategoria}">Borrar Categoria</button></div>`;
+			filtroCategoria += `<div class="mp-card"> <p>${categoria.nombreCategoria}</p> <button type="button" class="mp-btn mp-btn-secondary" data-accion="eliminar" data-nombre="${categoria.nombreCategoria}">Borrar Categoria</button></div>`;
 	}
 	document.getElementById("mostrarFiltro").innerHTML = filtroCategoria;
 }

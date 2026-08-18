@@ -5,17 +5,20 @@ let productos = leerDeStorage("productosRegistrados",[]);
 let parametros = new URLSearchParams(window.location.search);
 
 let nombreOriginal = parametros.get("nombre");
-let nombreProducto = parametros.get("nombre");
 let stockNombre = parametros.get("cantidadUser");
-let precioNombre = parametros.get("precio");
-let fotoProducto = parametros.get("img");
 
-let suma = 0;
-
-document.getElementById("nombreProducto").innerHTML = `Nombre del producto: ${nombreProducto}`
-document.getElementById("cantidadProducto").value = stockNombre
-document.getElementById("precioProducto").innerHTML = `Subtotal del producto: ${precioNombre}`
-document.getElementById("imgProducto").src = fotoProducto
+for(let i = 0; i < productosCarrito.length; i++) {
+	let productoCarrito = productosCarrito[i]
+	for(let i = 0; i < productos.length; i++) {
+		let producto = productos[i];
+		if(nombreOriginal === producto.nombreProducto) {
+			document.getElementById("nombreProducto").innerHTML = `Nombre del producto: ${producto.nombreProducto}`
+			document.getElementById("cantidadProducto").value = productoCarrito.cantidad;
+			document.getElementById("precioProducto").innerHTML = `Subtotal del producto: ${producto.precioProducto}`
+			document.getElementById("imgProducto").src = producto.imagenProducto
+		}
+	}
+}
 
 document.addEventListener("DOMContentLoaded", function() {
 	let formEditarProducto = document.getElementById("form-editarProducto");

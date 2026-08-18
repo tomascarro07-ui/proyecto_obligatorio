@@ -34,15 +34,6 @@ export class GestorCarrito {
 		guardarEnStorage("productosMiCarrito", productosCarrito);
 	}
     
-    // existeProductoRegistrado(producto) {
-    //     for(let i = 0; i < productos.length; i++) {
-    //         if(productos[i].nombreProducto.toLowerCase().trim() === producto.toLowerCase().trim()) {
-    //             return true;
-    //         };
-    //     };
-    //     return false;
-    // }
-    
     eliminarProducto(nombre) {
 		for(let i = 0; i < productosCarrito.length; i++) {
 			let productoCarrito = productosCarrito[i]
@@ -62,21 +53,4 @@ export class GestorCarrito {
         location.reload();
         return;
     }
-
-    // editarProductos(nombreOriginal,nombreProducto,tipoProducto,stockProducto,precioProducto,imgProducto,ivaProducto) {
-    //     for(let i = 0; i < productos.length; i++) {
-    //         let producto = productos[i];
-    //         if(producto.nombreProducto === nombreOriginal) {
-    //             let precioFinal = precioProducto + (precioProducto * ivaProducto / 100);
-    //             producto.nombreProducto = nombreProducto;
-    //             producto.tipoProducto = tipoProducto;
-    //             producto.stockProducto = stockProducto;
-    //             producto.precioProducto = precioProducto;
-    //             producto.imgProducto = imgProducto;
-    //             producto.ivaProducto = ivaProducto;
-    //             producto.precioFinal = precioFinal;
-    //         }
-    //     }
-    //     guardarEnStorage("productosRegistrados",productos);
-    // }
 }
