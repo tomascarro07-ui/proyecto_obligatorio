@@ -23,7 +23,26 @@ function mostrarCatalogo(tipo) {
 	for(let i = 0; i < productos.length; i++) {
 		let producto = productos[i];
 		if(producto.tipoProducto === tipo || tipo === "todas" || tipo === "") {
-			catalogo +=`<div class="producto-card"> <img class="producto-img" src="${producto.imagenProducto}"> <div class="producto-info"> <h3>${producto.nombreProducto}</h3> <p>$${producto.precioFinal}</p></div> <div class="producto-btn"> <button class="mp-btn mp-btn-primary" onclick="window.location.href='producto.html?nombre=${producto.nombreProducto}'">Ver detalles</button> </div> </div>`;
+				let precioMostrado = producto.precioFinal;
+			if(cotizacion === "dolar") {
+				precioMostrado = convertirPrecio(producto.precioFinal,"USD");
+			} else if(cotizacion === "euro") {
+				precioMostrado = convertirPrecio(producto.precioFinal,"EUR");
+			} else if(cotizacion === "peso-argentino") {
+				precioMostrado = convertirPrecio(producto.precioFinal,"ARS");
+			};
+			catalogo +=`<div class="producto-card"> 
+							<img class="producto-img" src="${producto.imagenProducto}"> 
+								<div class="producto-info"> 
+									<h3>${producto.nombreProducto}</h3> 
+									<p class="precioProducto" data-precio="${producto.precioFinal}">
+									$${precioMostrado}
+									</p>
+								</div> 
+								<div class="producto-btn"> 
+									<button class="mp-btn mp-btn-primary" onclick="window.location.href='producto.html?nombre=${producto.nombreProducto}&cotizacion=${cotizacion}'">Ver detalles</button> 
+								</div> 
+						</div>`;
 		};
 	};
 	if(tipo !== "todas") {

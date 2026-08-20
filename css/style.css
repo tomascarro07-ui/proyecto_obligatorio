@@ -1,3 +1,17 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Estilos generales */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -537,42 +551,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .navbar-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .dashboard-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tareas-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .equipos-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .miembros-lista {
-        grid-template-columns: 1fr;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-        padding: 10px;
-        font-size: 16px;
-    }
-
-    .btn {
-        width: 100%;
-        margin: 10px 0;
-    }
-}
-
 /* Utilidades */
 .text-center {
     text-align: center;
@@ -601,21 +579,6 @@ a:hover {
     padding: 20px;
     margin: 15px 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-/* Responsive design */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-        margin: 10px;
-    }
-    
-    button, a {
-        padding: 10px 20px;
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin: 8px 0;
-    }
 }
 
 header {
@@ -649,6 +612,7 @@ textarea{
 
 .metodos-pago {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
 }
@@ -664,4 +628,204 @@ textarea{
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+
+/* Tablet */
+
+@media (max-width: 992px) {
+
+    #carouselExampleAutoplaying img {
+        height: 320px;
+    }
+
+    #catalogoProductos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        justify-items: center;
+    }
+
+    .producto-card,
+    .producto-detalle {
+        width: 95%;
+    }
+
+    .tareas-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .tarea-card {
+        width: 100%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    .mp-navbar-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .mp-navbar-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .mp-btn,
+    .mp-navbar-menu a,
+    .navbar-menu button {
+        max-width: 100%;
+    }
+
+    .producto-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .mp-navbar-title {
+        order: 1;
+        width: 50%;
+    }
+
+    .acciones {
+        order: 2;
+        justify-content: flex-end;
+        width: 50%;
+    }
+
+    #form-buscador {
+        order: 3;
+        width: 100%;
+    }
+
+    .buscador {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #carouselExampleAutoplaying img {
+        height: 240px;
+    }
+
+    .container {
+        padding: 18px;
+        margin: 15px 10px;
+    }
+
+    .dashboard-grid,
+    .equipos-grid,
+    .miembros-lista {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .producto-card,
+    .producto-detalle {
+        width: 95%;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .producto-info {
+        margin-left: 0;
+        margin-top: 12px;
+        text-align: center;
+    }
+
+    .producto-btn {
+        margin-left: 0;
+        margin-top: 12px;
+    }
+
+    button, .mp-btn, a.mp-btn {
+        padding: 10px 20px;
+    }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .mp-navbar-title,
+    .acciones {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .mp-navbar-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    #carouselExampleAutoplaying img {
+        height: 170px;
+    }
+
+    #catalogoProductos {
+        grid-template-columns: 1fr;
+    }
+
+    .producto-card,
+    .producto-detalle {
+        width: 92%;
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .producto-img {
+        width: 90px;
+        height: 90px;
+        margin: 0 auto;
+    }
+
+    .producto-info {
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .producto-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+
+    .filter-tabs {
+        flex-direction: column;
+    }
+
+    .mp-btn,
+    .mp-navbar-menu a,
+    .navbar-menu button {
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    footer .nav {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    #carouselExampleAutoplaying {
+        margin: 15px 8px;
+    }
 }

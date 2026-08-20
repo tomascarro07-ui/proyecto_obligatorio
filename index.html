@@ -75,6 +75,18 @@
 			</center>
 		</div>
 
+		<div class="menu">
+			<label for="tipoConversion">Cotizacion:</label>
+				<select id="tipoConversion" class="filter-btn">
+					<option value="">Peso Uruguayo</option>
+					<option value="dolar">Dolar Americano</option>
+					<option value="euro">Euro</option>
+					<option value="peso-argentino">Peso Argentino</option>
+				</select>
+			</label>
+			<p>Conoce las cotizaciones</p>
+		</div>
+
 		<p id="filtrarProductos"></p>
 
 		<br>
@@ -109,6 +121,7 @@
 		<script type="module" src="scripts/base/initializer.js"></script>
 		<script src="scripts/catalogo/index.js"></script>
 		<script src="scripts/catalogo/listar_productos.js"></script>
+		<script src="scripts/modelos/moneda.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"crossorigin="anonymous"></script>
 	</body>
 </html>

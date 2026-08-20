@@ -29,6 +29,8 @@ async function obtenerCotizaciones() {
 	conversion.push(conversionMonedas);
 	guardarEnStorage("conversionesMonedas",conversion)
 
+	document.dispatchEvent(new CustomEvent("cotizacionesListas"));
+
   } catch (error) {
     console.error('Error:', error);
   }

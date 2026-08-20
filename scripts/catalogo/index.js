@@ -1,4 +1,6 @@
 usuarioActual = validarSesion();
+let productos = leerDeStorage("productosRegistrados",[]);
+let cotizacion = "";
 
 if(!usuarioActual) {
 	document.getElementById("usuarioActual").innerHTML = "¡Bienvenido a Mundo Periféricos!";
@@ -6,6 +8,11 @@ if(!usuarioActual) {
 } else {
 	document.getElementById("usuarioActual").innerHTML = "¡Bienvenido <b>" + usuarioActual.nombre + "</b> a Mundo Periféricos!";
 	document.getElementById("sesion").innerHTML = `<button class="mp-btn mp-btn-small" onclick="cerrarSesion()">Cerrar sesión</button>`
+	
+	document.getElementById("tipoConversion").addEventListener("change", function() {
+		cotizacion = this.value;
+		mostrarCatalogo(document.getElementById("filtroTipo").value || "todas");
+	});
 	
 	if(usuarioActual.esAdministrador === true) {
 		document.getElementById("administrador").innerHTML = `<div class="menu"><a href="admin.html">Agregar productos</a> <a href="ventas_admin.html">Ventas realizadas</a> <a href="editar_filtros_admin.html">Editar categorias</a></div>`;
