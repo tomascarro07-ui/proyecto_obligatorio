@@ -40,7 +40,7 @@ function continuarCompra() {
 	});
 	
 	if(carritoUsuario.length > 0) {
-		continuar = `<button class="mp-btn mp-btn-primary" onclick="window.location.href='confirmar_compra.html'">Continuar</button> <br> <button class="mp-btn mp-btn-secondary" onclick="borrarCarrito()">Eliminar mi carrito</button>`
+		continuar = `<button class="mp-btn mp-btn-primary" onclick="window.location.href='confirmar_compra.html'">Continuar</button> <br> <button class="mp-btn mp-btn-secondary" data-accion="eliminarCarrito">Eliminar mi carrito</button>`
 	}
 	document.getElementById("continuarCompra").innerHTML = continuar
 }
@@ -63,3 +63,41 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    let continuarCompra = document.getElementById("continuarCompra");
+    if(continuarCompra) {
+        continuarCompra.addEventListener("click",function(e) {
+            let boton = e.target;
+            if (boton.dataset.accion === "eliminarCarrito") {
+                document.getElementById("btnConfirmarEliminarCarrito").onclick = function() {
+                    for(let i = 0; i < productosCarrito.length; i++) {
+						let productoCarrito = productosCarrito[i];
+						if(productoCarrito.usuario == usuarioActual.correo) {
+							for(let j = 0; j < productos.length; j++) {
+								let producto = productos[j];
+								if(productoCarrito.nombre === producto.nombreProducto) {
+									producto.stockProducto += Number(productoCarrito.cantidad)
+									guardarEnStorage("productosRegistrados",productos);
+									break;
+								}	
+							}
+						}
+					}
+					
+					productosCarrito = productosCarrito.filter(function(productoCarrito) {
+						return productoCarrito.usuario != usuarioActual.correo;
+					});
+					
+					guardarEnStorage("productosMiCarrito",productosCarrito);
+					guardarEnStorage("productosRegistrados",productos);
+					window.location.href="index.html"
+					return;
+                };
+                let modal = new bootstrap.Modal(document.getElementById("modalEliminarCarrito"));
+                modal.show();
+            }
+        });
+    }
+});
+

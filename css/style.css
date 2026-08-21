@@ -829,3 +829,39 @@ textarea{
         margin: 15px 8px;
     }
 }
+
+.progress {
+	background-color: #131a29 !important;
+}
+
+.review-item {
+	border-bottom: 1px solid #2a3454;
+	padding: 14px 0;
+}
+
+.review-item:last-child {
+	border-bottom: none;
+}
+
+.review-estrellas i {
+	color: #ffa726;
+	font-size: 13px;
+}
+
+.review-fecha {
+	color: #93a0c2;
+	font-size: 12px;
+	margin-left: 8px;
+}
+
+.review-texto {
+	margin: 6px 0 0;
+	text-align: left;
+	color: #d8dcea;
+}
+
+.sin-reviews {
+	color: #93a0c2;
+	text-align: center;
+	padding: 20px 0;
+}

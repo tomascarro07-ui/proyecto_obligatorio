@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mundo Periféricos - Producto</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 	<body>
@@ -50,6 +51,22 @@
 				</form>
 			</div>
 		</div>
+		<div class="mp-card">
+			<div class="row align-items-center">
+				<div class="col-md-4 text-center">
+					<h1 class="display-4 mb-2" id="ratingPromedio" style="color:#ffa726;">4.8</h1>
+					<div class="mb-2" id="ratingEstrellasGrande"></div>
+					<h6 style="color:#93a0c2;" id="ratingCantidad">Basado en 245 opiniones</h6>
+				</div>
+				<div class="col-md-8" id="ratingBarras"></div>
+			</div>
+
+			<hr style="border-color:#2a3454;">
+
+			<h5 class="mb-3">Opiniones de clientes</h5>
+			<div id="listaReviews"></div>
+		</div>
+
 
 		<script src="scripts/base/storage.js"></script>
 		<script src="scripts/base/autenticacion.js"></script>
@@ -57,5 +74,6 @@
 		<script src="scripts/catalogo/producto.js"></script>
 		<script type="module" src="scripts/gestores/gestorCarrito.js"></script>
 		<script type="module" src="./scripts/formCarrito.js"></script>
+		<script src="./scripts/catalogo/rating.js"></script>
 	</body>
 </html>
