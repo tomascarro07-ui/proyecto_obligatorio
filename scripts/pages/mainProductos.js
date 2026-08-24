@@ -46,6 +46,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-document.getElementById("idProducto").value = Number(productos.length + 1);
+let nuevoId = productos.length + 1;
+for(let i = 0; i < productos.length; i++) {
+	let producto = productos[i];
+
+	if(producto.id === nuevoId) {
+		nuevoId++;
+		i = -1;
+	}
+}
+
+document.getElementById("idProducto").value = nuevoId;
 
 mostrarCatalogo();
