@@ -42,6 +42,7 @@ function resumenCompra() {
 	ventasRealizadas.push(ventaRealizada);
 	guardarEnStorage("comprasRealizadas",ventasRealizadas);
 	guardarEnStorage("productosRegistrados",productos);
+	vaciarCarrito()
 	let total = `TOTAL: $${sumaTotal.toFixed(2)}`;
 	document.getElementById("micarrito").innerHTML = carrito;
 	document.getElementById("totalCompra").innerHTML = total;
@@ -49,17 +50,11 @@ function resumenCompra() {
 
 resumenCompra();
 
-function borrarCarrito() {
-	for(let i = 0; i < productosCarrito.length; i++) {
-		let productoCarrito = productosCarrito[i];
-		for(let j = 0; j < productos.length; j++) {
-			let producto = productos[j];
-			if(productoCarrito.nombre === producto.nombreProducto) {
-				producto.stockProducto += Number(productoCarrito.cantidad);
-				break;
-			};
-		};
-	};
-	guardarEnStorage("productosRegistrados",productos);
+function vaciarCarrito() {	
+	productosCarrito = productosCarrito.filter(function(productoCarrito) {
+		return productoCarrito.usuario != usuarioActual.correo;
+	});
+	
+	guardarEnStorage("productosMiCarrito",productosCarrito);
 	return;
-};
+}

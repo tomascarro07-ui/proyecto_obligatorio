@@ -5,6 +5,7 @@ let cotizacion = "";
 if(!usuarioActual) {
 	document.getElementById("usuarioActual").innerHTML = "¡Bienvenido a Mundo Periféricos!";
 	document.getElementById("sesion").innerHTML = `<button class="mp-btn mp-btn-small" onclick="window.location.href='login.html'">Iniciar sesión</button>`
+	document.getElementById("cotizaciones").innerHTML = "";
 } else {
 	document.getElementById("usuarioActual").innerHTML = "¡Bienvenido <b>" + usuarioActual.nombre + "</b> a Mundo Periféricos!";
 	document.getElementById("sesion").innerHTML = `<button class="mp-btn mp-btn-small" onclick="cerrarSesion()">Cerrar sesión</button>`

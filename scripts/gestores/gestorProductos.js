@@ -39,7 +39,7 @@ export class GestorProducto {
 		};
 	};
 
-	editarProductos(nombreOriginal,nombreProducto,tipoProducto,stockProducto,precioProducto,imgProducto,ivaProducto) {
+	editarProductos(nombreOriginal,nombreProducto,tipoProducto,stockProducto,precioProducto,imagenProducto,ivaProducto) {
 		for(let i = 0; i < productos.length; i++) {
 			let producto = productos[i];
 			if(producto.nombreProducto === nombreOriginal) {
@@ -48,7 +48,7 @@ export class GestorProducto {
 				producto.tipoProducto = tipoProducto;
 				producto.stockProducto = stockProducto;
 				producto.precioProducto = precioProducto;
-				producto.imgProducto = imgProducto;
+				producto.imgProducto = imagenProducto;
 				producto.ivaProducto = ivaProducto;
 				producto.precioFinal = precioFinal;
 			}

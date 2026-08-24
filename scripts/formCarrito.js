@@ -9,7 +9,7 @@ if(formProducto) {
 		e.preventDefault(); 
 
 		let cantidadAlCarrito = Number(document.getElementById("agregarCantProducto").value);
-		let precioFinal = Number(precioAlCarrito.toFixed(2) * cantidadAlCarrito);
+		let precioFinal = Number(precioAlCarrito * cantidadAlCarrito).toFixed(2);
 
 		if (cantidadAlCarrito <= 0) {
 			alert("¡Ingrese un número valido!");

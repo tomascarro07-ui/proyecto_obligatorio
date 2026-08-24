@@ -865,3 +865,21 @@ textarea{
 	text-align: center;
 	padding: 20px 0;
 }
+
+.filtros {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filtro-centro {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.moneda {
+    position: absolute;
+    right: 20px;
+}

@@ -1,8 +1,3 @@
-// rating.js
-// Genera un rating y reviews random para el producto actual (mismo producto
-// siempre da el mismo resultado, se guarda en localStorage) y lo pinta
-// en el bloque .mp-card de producto.html
-
 const AUTORES = ["Martín G.", "Lucía R.", "Facundo P.", "Camila S.", "Nicolás F.", "Valentina A.", "Bruno M.", "Sofía D."];
 const COMENTARIOS_POSITIVOS = [
 	"Excelente producto, llegó antes de lo esperado.",
@@ -141,7 +136,6 @@ function mostrarRatingEnPagina(nombreProducto) {
 	document.getElementById("listaReviews").innerHTML = pintarListaReviews(datos.reviews);
 }
 
-// se ejecuta solo al cargar producto.html (busca ?nombre= en la URL)
 document.addEventListener("DOMContentLoaded", () => {
 	const params = new URLSearchParams(window.location.search);
 	const nombreProducto = params.get("nombre");

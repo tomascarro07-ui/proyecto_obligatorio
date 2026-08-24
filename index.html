@@ -64,28 +64,31 @@
 			  </button>
 			</div>
 		</div>
-
+		
 		<center><h2 id="catalogo">Catalogo de Productos:</h2></center>
-		<div>
-			<center>
-				<label for="filtroTipo">Filtrar por:</label>
-				<select id="filtroTipo" class="filter-btn" required>
-					<option value="todas">Todos los productos</option>
-				</select>
-			</center>
-		</div>
+		
+		<div class="filtros">
+			<div class="filtro-centro">
+				<center>
+					<label for="filtroTipo">Filtrar por:</label>
+					<select id="filtroTipo" class="filter-btn" required>
+						<option value="todas">Todos los productos</option>
+					</select>
+				</center>
+			</div>
 
-		<div class="menu">
-			<label for="tipoConversion">Cotizacion:</label>
-				<select id="tipoConversion" class="filter-btn">
-					<option value="">Peso Uruguayo</option>
-					<option value="dolar">Dolar Americano</option>
-					<option value="euro">Euro</option>
-					<option value="peso-argentino">Peso Argentino</option>
-				</select>
-			</label>
-			<p>Conoce las cotizaciones</p>
+			<div id="cotizaciones" class="moneda">
+				<label for="tipoConversion"></label>
+					<select id="tipoConversion" class="filter-btn">
+						<option value="">Peso Uruguayo</option>
+						<option value="dolar">Dolar Americano</option>
+						<option value="euro">Euro</option>
+						<option value="peso-argentino">Peso Argentino</option>
+					</select>
+				</label>
+			</div>
 		</div>
+		
 
 		<p id="filtrarProductos"></p>
 

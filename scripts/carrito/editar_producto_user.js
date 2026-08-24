@@ -9,8 +9,8 @@ let stockNombre = parametros.get("cantidadUser");
 
 for(let i = 0; i < productosCarrito.length; i++) {
 	let productoCarrito = productosCarrito[i]
-	for(let i = 0; i < productos.length; i++) {
-		let producto = productos[i];
+	for(let j = 0; i < productos.length; j++) {
+		let producto = productos[j];
 		if(nombreOriginal === producto.nombreProducto) {
 			document.getElementById("nombreProducto").innerHTML = `Nombre del producto: ${producto.nombreProducto}`
 			document.getElementById("cantidadProducto").value = productoCarrito.cantidad;

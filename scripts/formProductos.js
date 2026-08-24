@@ -23,7 +23,7 @@ if(formProductos) {
 			Number(document.getElementById("idProducto").value),
 			document.getElementById("nombreProducto").value,
 			Number(document.getElementById("cantidadProducto").value),
-			precioFinal,
+			Number(document.getElementById("precioProducto").value),
 			Number(document.getElementById("ivaProducto").value),
 			document.getElementById("imgProducto").value,
 			document.getElementById("filtroTipo").value
