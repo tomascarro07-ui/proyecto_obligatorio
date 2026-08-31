@@ -49,10 +49,19 @@ document.addEventListener("DOMContentLoaded", function() {
 let nuevoId = productos.length + 1;
 for(let i = 0; i < productos.length; i++) {
 	let producto = productos[i];
-
 	if(producto.id === nuevoId) {
 		nuevoId++;
 		i = -1;
+	}
+}
+
+export function obtenerValorIva(tipo) {
+	if(tipo == "minimo") {
+		return 10;
+	} else if (tipo == "basico") {
+		return 22;
+	} else {
+		return 0;
 	}
 }
 
