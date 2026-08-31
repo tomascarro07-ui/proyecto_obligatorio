@@ -40,7 +40,13 @@ function mostrarCatalogo(tipo) {
 									</p>
 								</div> 
 								<div class="producto-btn"> 
-									<button class="mp-btn mp-btn-primary" onclick="window.location.href='producto.html?nombre=${producto.nombreProducto}&cotizacion=${cotizacion}'">Ver detalles</button> 
+									<button 
+										class="mp-btn mp-btn-primary" 
+										data-accion="productoClick" 
+										data-nombre="${producto.nombreProducto}" 
+										data-cotizacion="${cotizacion}">
+										Ver detalles
+									</button> 
 								</div> 
 						</div>`;
 		};
@@ -58,3 +64,14 @@ function eliminarFiltro() {
 	mostrarCatalogo("todas");
 };
 
+document.addEventListener("DOMContentLoaded", function() {
+    let catalogoDiv = document.getElementById("catalogoProductos");
+    if(catalogoDiv) {
+        catalogoDiv.addEventListener("click",function(e) {
+            let boton = e.target;
+            if(boton.dataset.accion === "productoClick") {
+                window.location.href = `producto.html?nombre=${boton.dataset.nombre}&cotizacion=${boton.dataset.cotizacion}`
+            }
+        });
+    }
+});

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded",function(){
 		let nombre = producto.nombreProducto.toLowerCase().replaceAll(" ", "");
 		let busquedaUser = productoNombre.toLowerCase().replaceAll(" ", "")
 		if(nombre.includes(busquedaUser)) {
-			busqueda += `<div class="card"> ${producto.nombreProducto} <br> <img width="150px" src="${producto.imagenProducto}"><br> <button class="mp-btn mp-btn-primary" onclick="window.location.href='producto.html?nombre=${producto.nombreProducto}&stock=${producto.stockProducto}&precio=${producto.precioFinal}&img=${producto.imagenProducto}&iva=${producto.ivaProducto}'"> Ver detalles </button> <br><br><br> </div> `;
+			busqueda += `<div class="card"> ${producto.nombreProducto} <br> <img width="150px" src="${producto.imagenProducto}"><br> <button type="button" class="mp-btn mp-btn-primary" data-accion="productoClick" data-nombre="${producto.nombreProducto}"> Ver detalles </button> <br><br><br> </div> `;
 			productosBuscados++;
 		};
 	};
@@ -23,3 +23,15 @@ document.addEventListener("DOMContentLoaded",function(){
 	document.getElementById("catalogoProductos").innerHTML = busqueda;
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    let catalogoDiv = document.getElementById("catalogoProductos");
+    if(catalogoDiv) {
+        catalogoDiv.addEventListener("click",function(e) {
+            let boton = e.target;
+            if(boton.dataset.accion === "productoClick") {
+                window.location.href = `producto.html?nombre=${boton.dataset.nombre}`
+            }
+        });
+    }
+});
