@@ -21,16 +21,20 @@ if(formProducto) {
 			return;
 		}
 
-        gestorCarrito.agregarProductoCarrito (
-			productoNombre,   
-			precioFinal,   
-			precioAlCarrito, 
-			cantidadAlCarrito,
-			ivaProducto,
-			fotoProducto,
-			usuarioActual.correo
-		);
-		alert("¡Producto agregado correctamente!");
-		window.location.href = "index.html";
+		if(usuarioActual) {
+			gestorCarrito.agregarProductoCarrito (
+				productoNombre,   
+				precioFinal,   
+				precioAlCarrito, 
+				cantidadAlCarrito,
+				ivaProducto,
+				fotoProducto,
+				usuarioActual.correo
+			);
+			alert("¡Producto agregado correctamente!");
+			window.location.href = "index.html";
+		} else {
+			window.location.href="registro.html";
+		}
     });
 }

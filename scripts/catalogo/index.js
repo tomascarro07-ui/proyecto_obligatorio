@@ -20,8 +20,14 @@ if(!usuarioActual) {
 	} else {
 		document.getElementById("usuario").innerHTML = `<div class="menu"><a href="venta_usuario.html">Mis compras</a> <a href="guia_uso.html">Ayuda</a> <a href="cotizaciones.html">Cotizaciones</a>`;
 	};
+}
 
-
-
+let formBuscador = document.getElementById("form-buscador");
+if(formBuscador) {
+	formBuscador.addEventListener("submit",function(e){
+		if(document.getElementById("buscador").value.trim() === "") {
+			e.preventDefault();
+		}
+	});
 }
 
