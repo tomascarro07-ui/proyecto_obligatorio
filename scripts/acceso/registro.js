@@ -39,3 +39,9 @@ function usuarioYaValidado(correo) {
 	}
 	return false;
 }
+
+const hoy = new Date();
+hoy.setFullYear(hoy.getFullYear() - 18);
+const fechaMaxima = hoy.toISOString().split('T')[0];
+document.getElementById('nacimiento').max = fechaMaxima;
+

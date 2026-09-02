@@ -33,29 +33,65 @@ function mostrarTexto(tipo){
 }
 
 function confirmarCompra() {
-    let metodoPago = document.querySelector('input[name="metodPago"]:checked').value;
 
-    let metodoEnvio = document.querySelector('input[name="metodeEnvio"]:checked');
+    let metodoPago = document.querySelector('input[name="metodPago"]:checked').value
+	let metodoEntrega = document.querySelector('input[name="metodeEnvio"]:checked').value
+    let metodoEnvio = document.querySelector('input[name="metodeEnvio"]:checked')
 
     if (!metodoEnvio) {
         alert("Seleccione un método de envío");
         return;
     }
 
-    metodoEnvio = metodoEnvio.value
-	let inputDireccion = document.getElementById("direccion");
 	let direccionEnvio;
-	if(direccionEnvio) {
-		direccionEnvio = inputDireccion
+    
+	if(metodoEnvio.value === "Envio-Domicilio") {
+		let inputDireccion = document.getElementById("direccionCompra");
+
+		if(!inputDireccion || inputDireccion.value.trim() === "") {
+			alert("Ingrese una dirección valida.");
+			return;
+		}
+
+		direccionEnvio = inputDireccion.value;
 	} else {
-		direccionEnvio = "PickUp"
+		direccionEnvio = "PickUp - Coronel Arroyo 521"
 	}
 	
     let datosEntrega = {
 		metodoPago: metodoPago,
-		metodoEntrega: metodoEnvio,
+		metodoEntrega: metodoEntrega,
 		direccion: direccionEnvio
 	}
 	guardarEnStorage("datosCompra",datosEntrega);
 	window.location.href = "compra_realizada.html"
 }
+
+
+// function confirmarCompra() {
+//     let metodoPago = document.querySelector('input[name="metodPago"]:checked').value;
+
+//     let metodoEnvio = document.querySelector('input[name="metodeEnvio"]:checked');
+
+//     if (!metodoEnvio) {
+//         alert("Seleccione un método de envío");
+//         return;
+//     }
+
+//     metodoEnvio = metodoEnvio.value
+// 	let inputDireccion = document.getElementById("direccionCompra");
+// 	let direccionEnvio;
+// 	if(direccionEnvio) {
+// 		direccionEnvio = inputDireccion
+// 	} else {
+// 		direccionEnvio = "PickUp"
+// 	}
+	
+//     let datosEntrega = {
+// 		metodoPago: metodoPago,
+// 		metodoEntrega: metodoEnvio,
+// 		direccion: direccionEnvio
+// 	}
+// 	guardarEnStorage("datosCompra",datosEntrega);
+// 	window.location.href = "compra_realizada.html"
+// }

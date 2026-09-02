@@ -2,6 +2,9 @@ import { GestorCarrito } from "../gestores/gestorCarrito.js";
 let gestorCarrito = new GestorCarrito();
 
 usuarioActual = validarSesion();
+if(usuarioActual === null) {
+	window.location.href = "login.html";
+}
 let productosCarrito = leerDeStorage("productosMiCarrito",[]);
 let productos = leerDeStorage("productosRegistrados",[]);
 
