@@ -55,16 +55,6 @@ for(let i = 0; i < productos.length; i++) {
 	}
 }
 
-export function obtenerValorIva(tipo) {
-	if(tipo == "minimo") {
-		return 10;
-	} else if (tipo == "basico") {
-		return 22;
-	} else {
-		return 0;
-	}
-}
-
 document.getElementById("idProducto").value = nuevoId;
 
 mostrarCatalogo();

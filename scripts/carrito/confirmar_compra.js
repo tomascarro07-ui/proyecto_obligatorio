@@ -66,32 +66,3 @@ function confirmarCompra() {
 	guardarEnStorage("datosCompra",datosEntrega);
 	window.location.href = "compra_realizada.html"
 }
-
-
-// function confirmarCompra() {
-//     let metodoPago = document.querySelector('input[name="metodPago"]:checked').value;
-
-//     let metodoEnvio = document.querySelector('input[name="metodeEnvio"]:checked');
-
-//     if (!metodoEnvio) {
-//         alert("Seleccione un método de envío");
-//         return;
-//     }
-
-//     metodoEnvio = metodoEnvio.value
-// 	let inputDireccion = document.getElementById("direccionCompra");
-// 	let direccionEnvio;
-// 	if(direccionEnvio) {
-// 		direccionEnvio = inputDireccion
-// 	} else {
-// 		direccionEnvio = "PickUp"
-// 	}
-	
-//     let datosEntrega = {
-// 		metodoPago: metodoPago,
-// 		metodoEntrega: metodoEnvio,
-// 		direccion: direccionEnvio
-// 	}
-// 	guardarEnStorage("datosCompra",datosEntrega);
-// 	window.location.href = "compra_realizada.html"
-// }

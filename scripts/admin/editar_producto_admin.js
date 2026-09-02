@@ -23,7 +23,7 @@ for(let i = 0; i < productos.length; i++) {
 		document.getElementById("cantidadProducto").value = producto.stockProducto;
 		document.getElementById("precioProducto").value = producto.precioProducto;
 		document.getElementById("imgProducto").value = producto.imagenProducto;
-		document.getElementById("ivaProducto").value = producto.ivaProducto;
+		document.getElementById("ivaProducto").value = gestorProductos.obtenerIvaTexto(producto.ivaProducto);
 	}
 }
 
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				Number(document.getElementById("cantidadProducto").value),
 				Number(document.getElementById("precioProducto").value),
 				document.getElementById("imgProducto").value,
-				Number(document.getElementById("ivaProducto").value),
+				gestorProductos.obtenerValorIva(document.getElementById("ivaProducto").value),
 			)
 			window.location.href="admin.html";
 		});

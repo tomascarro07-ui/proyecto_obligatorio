@@ -1,5 +1,4 @@
 import { GestorProducto } from "./gestores/gestorProductos.js";
-import { obtenerValorIva } from "../scripts/pages/mainProductos.js";
 
 let gestorProductos = new GestorProducto();
 let formProductos = document.getElementById("form-productos")
@@ -25,7 +24,7 @@ if(formProductos) {
 			document.getElementById("nombreProducto").value,
 			Number(document.getElementById("cantidadProducto").value),
 			Number(document.getElementById("precioProducto").value),
-			obtenerValorIva(document.getElementById("ivaProducto").value),
+			gestorProductos.obtenerValorIva(document.getElementById("ivaProducto").value),
 			document.getElementById("imgProducto").value,
 			document.getElementById("filtroTipo").value
 		);

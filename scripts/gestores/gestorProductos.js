@@ -55,4 +55,24 @@ export class GestorProducto {
 		}
 		guardarEnStorage("productosRegistrados",productos);
 	}
+
+	obtenerValorIva(tipo) {
+		if(tipo == "minimo") {
+			return 10;
+		} else if (tipo == "basico") {
+			return 22;
+		} else {
+			return 0;
+		}
+	}
+
+	obtenerIvaTexto(valor) {
+		if(valor == 10) {
+			return "minimo";
+		} else if(valor == 22) {
+			return "basico"
+		} else {
+			return "exento";
+		}
+	}
 }
