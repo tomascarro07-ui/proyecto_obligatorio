@@ -11,6 +11,7 @@ let precioNombre = 0;
 let ivaProducto = 0;
 let stockProducto = 0;
 let fotoProducto = "";
+let productoNombre;
 
 for(let i = 0; i < productos.length; i++) {
 	let producto = productos[i];
@@ -19,6 +20,7 @@ for(let i = 0; i < productos.length; i++) {
 		document.getElementById("cantidadProducto").innerHTML = `Stock: ${producto.stockProducto}`;
 		document.getElementById("img").src = producto.imagenProducto;
 		
+		productoNombre = producto.nombreProducto;
 		precioAlCarrito = Number(producto.precioFinal);
 		precioNombre = Number(producto.precioProducto);
 		ivaProducto = producto.ivaProducto;

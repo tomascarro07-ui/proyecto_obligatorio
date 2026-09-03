@@ -16,6 +16,13 @@ function inicializar() {
 }
 
 function mostrarCarrito() {
+	let tieneProductos = productosCarrito.filter(function(productoCarrito) {
+		return productoCarrito.usuario == usuarioActual.correo;
+	});
+
+	if(tieneProductos.length === 0) {
+		document.getElementById("micarrito").innerHTML = "Tu carrito está vacío. <a href='index.html'><u>¡Agregá algunos productos para continuar!</u></a>"
+	}
 	let carrito = "Productos en mi carrito: <br><br>";
 	let {sumaTotal,sumaIva,sumaSinIva} = gestorCarrito.calcularResumen(usuarioActual.correo);
 	for(let i = 0; i < productosCarrito.length; i++) {
