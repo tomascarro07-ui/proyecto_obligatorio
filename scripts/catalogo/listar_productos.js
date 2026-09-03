@@ -43,7 +43,7 @@ function mostrarCatalogo(tipo) {
 									<button 
 										class="mp-btn mp-btn-primary" 
 										data-accion="productoClick" 
-										data-nombre="${producto.nombreProducto}" 
+										data-id="${producto.id}" 
 										data-cotizacion="${cotizacion}">
 										Ver detalles
 									</button> 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
         catalogoDiv.addEventListener("click",function(e) {
             let boton = e.target;
             if(boton.dataset.accion === "productoClick") {
-                window.location.href = `producto.html?nombre=${boton.dataset.nombre}&cotizacion=${boton.dataset.cotizacion}`
+                window.location.href = `producto.html?id=${boton.dataset.id}&cotizacion=${boton.dataset.cotizacion}`
             }
         });
     }

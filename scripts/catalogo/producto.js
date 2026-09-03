@@ -4,7 +4,7 @@ let productos = leerDeStorage("productosRegistrados",[]);
 
 let parametros = new URLSearchParams(window.location.search);
 
-let productoNombre = parametros.get("nombre");
+let productoID = Number(parametros.get("id"));
 let cotizacion = parametros.get("cotizacion");
 let precioAlCarrito = 0;
 let precioNombre = 0;
@@ -14,7 +14,7 @@ let fotoProducto = "";
 
 for(let i = 0; i < productos.length; i++) {
 	let producto = productos[i];
-	if(productoNombre === producto.nombreProducto) {
+	if(productoID === producto.id) {
 		document.getElementById("nombreProducto").innerHTML = `Nombre: ${producto.nombreProducto}`
 		document.getElementById("cantidadProducto").innerHTML = `Stock: ${producto.stockProducto}`;
 		document.getElementById("img").src = producto.imagenProducto;
@@ -63,7 +63,7 @@ document.addEventListener("click",function() {
 function avisarStock() {
 	for(let i = 0; i < productos.length; i++) {
 		let producto = productos[i]
-		if(producto.nombreProducto === productoNombre) {
+		if(producto.id === productoID) {
 			if(producto.stockProducto === 0) {
 				document.getElementById("enviarBtn").innerHTML = "";
 				document.getElementById("faltaStock").innerHTML = `<button class="mp-btn mp-btn-secondary" type="button" onclick="alert('¡Se ha informado!')">¡Informar falta de stock!</button>`

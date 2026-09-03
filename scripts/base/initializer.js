@@ -19,7 +19,7 @@ function inicializarProductos() {
 			12,
 			1890,
 			ivaMinimo,
-			"img/teclado-mecanico-redragon-kumara-k552.png",
+			"img/teclado-mecanico-redragon-kumara-k552.webp",
 			"teclados"
 	)
 
@@ -29,7 +29,7 @@ function inicializarProductos() {
 			15,
 			1299,
 			ivaBasico,
-			"img/mouse-logitech-g203-lightsync.png",
+			"img/mouse-logitech-g203-lightsync.webp",
 			"mouses"
 	)
 
@@ -39,7 +39,7 @@ function inicializarProductos() {
 			8,
 			2490,
 			ivaMinimo,
-			"img/hyperx-cloud-stinger.png",
+			"img/hyperx-cloud-stinger.webp",
 			"auriculares"
 	)
 		
@@ -49,7 +49,7 @@ function inicializarProductos() {
 			20,
 			590,
 			ivaExtento,
-			"img/mousepad-xl-gamer.png",
+			"img/mousepad-xl-gamer.webp",
 			"mouses"
 	)
 
@@ -59,7 +59,7 @@ function inicializarProductos() {
 			25,
 			899,
 			ivaBasico,
-			"img/teclado-logitech-k120.png",
+			"img/teclado-logitech-k120.webp",
 			"teclados"
 	)
 
@@ -69,7 +69,7 @@ function inicializarProductos() {
 			18,
 			990,
 			ivaMinimo,
-			"img/mouse-inalambrico-logitech-m185.png",
+			"img/mouse-inalambrico-logitech-m185.webp",
 			"mouses"
 	)
 
@@ -79,7 +79,7 @@ function inicializarProductos() {
 			10,
 			1790,
 			ivaExtento,
-			"img/auriculares-logitech-h390-usb.png",
+			"img/auriculares-logitech-h390-usb.webp",
 			"auriculares"
 	)
 
@@ -89,7 +89,7 @@ function inicializarProductos() {
 			6,
 			2990,
 			ivaMinimo,
-			"img/microfono-fifine-k669.png",
+			"img/microfono-fifine-k669.webp",
 			"microfonos"
 	)
 
@@ -99,7 +99,7 @@ function inicializarProductos() {
 			9,
 			2499,
 			ivaBasico,
-			"img/logitech-c920.png",
+			"img/logitech-c920.webp",
 			"webcams"
 	)
 
@@ -109,7 +109,7 @@ function inicializarProductos() {
 			14,
 			1190,
 			ivaExtento,
-			"img/joystick-usb-pc.png",
+			"img/joystick-usb-pc.webp",
 			"joysticks"
 	)
 }
