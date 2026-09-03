@@ -81,9 +81,11 @@ Para probar el lado administrador, iniciar sesion con `admin@admin` / `admin123`
 ## Ideas didacticas
 
 - Cada HTML representa una accion concreta de la tienda.
-- Cada script maneja solo el DOM que necesita.
+- El modelo de datos se separa en clases ES6 (`scripts/modelos/`: `Producto`, `Usuario`, `Carrito`, `Venta`) que se importan con `import`/`export` donde corresponde.
+- La logica de negocio se agrupa en gestores (`scripts/gestores/`: `GestorProducto`, `GestorCategorias`, `GestorCarrito`), separando el manejo de datos del manejo del DOM.
+- El DOM y los formularios de cada pagina se controlan desde `scripts/pages/` (`mainProductos.js`, `mainFiltros.js`, `mainCarritos.js`) y desde los scripts sueltos `scripts/formProductos.js`, `scripts/formFiltros.js`, `scripts/formCarrito.js`.
+- Se incorpora una cotizacion de moneda en tiempo real (`scripts/modelos/moneda.js`), que consulta una API externa (frankfurter.dev) y convierte los precios a USD, EUR y ARS.
 - El rol de administrador se valida en cada pagina protegida (`usuarioActual.admin`).
-- No se usan clases ES6, import/export ni patrones avanzados.
 
 ## Otros archivos
 
