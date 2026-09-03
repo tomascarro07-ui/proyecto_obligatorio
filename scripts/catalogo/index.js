@@ -16,9 +16,9 @@ if(!usuarioActual) {
 	});
 	
 	if(usuarioActual.esAdministrador === true) {
-		document.getElementById("administrador").innerHTML = `<div class="menu"><a href="admin.html">Agregar productos</a> <a href="ventas_admin.html">Ventas realizadas</a> <a href="editar_filtros_admin.html">Editar categorias</a></div>`;
+		document.getElementById("administrador").innerHTML = `<div class="menu"><a href="admin.html">Agregar productos</a> <a href="ventas_admin.html">Ventas realizadas</a> <a href="editar_categorias_admin.html">Editar categorias</a></div>`;
 	} else {
-		document.getElementById("usuario").innerHTML = `<div class="menu"><a href="venta_usuario.html">Mis compras</a> <a href="guia_uso.html">Ayuda</a> <a href="cotizaciones.html">Cotizaciones</a>`;
+		document.getElementById("usuario").innerHTML = `<div class="menu"><a href="compras_usuario.html">Mis compras</a> <a href="guia_uso.html">Ayuda</a> <a href="cotizaciones.html">Cotizaciones</a>`;
 	};
 }
 

@@ -53,4 +53,22 @@ export class GestorCarrito {
         location.reload();
         return;
     }
+
+	calcularResumen(usuario) {
+		let sumaTotal = 0;
+		let sumaIva = 0;
+		let sumaSinIva = 0; 
+		for(let i = 0; i < productosCarrito.length; i++) {
+			let productoCarrito = productosCarrito[i];
+			if(productoCarrito.usuario == usuario) {
+				let monto = Number(productoCarrito.precio) / (1 + Number(productoCarrito.iva) / 100);
+				let iva = Number(productoCarrito.precio) - monto;
+				sumaSinIva += monto;
+				sumaIva += iva;
+				sumaTotal += Number(productoCarrito.precio);
+				
+			}
+		}
+		return {sumaTotal, sumaIva, sumaSinIva};
+	}
 }

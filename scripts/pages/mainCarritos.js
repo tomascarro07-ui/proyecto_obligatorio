@@ -17,17 +17,10 @@ function inicializar() {
 
 function mostrarCarrito() {
 	let carrito = "Productos en mi carrito: <br><br>";
-	let sumaTotal = 0;
-	let sumaIva = 0;
-	let sumaSinIva = 0; 
+	let {sumaTotal,sumaIva,sumaSinIva} = gestorCarrito.calcularResumen(usuarioActual.correo);
 	for(let i = 0; i < productosCarrito.length; i++) {
 		let productoCarrito = productosCarrito[i]
 		if(productoCarrito.usuario == usuarioActual.correo) {
-			let monto = Number(productoCarrito.precio) / (1 + Number(productoCarrito.iva) / 100);
-			let iva = Number(productoCarrito.precio) - monto;
-			sumaSinIva += monto
-			sumaIva += iva
-			sumaTotal += Number(productoCarrito.precio)
 			carrito += `<div class="mp-card"> <h3>${productoCarrito.nombre}</h3> <br> Precio por unidad: $${productoCarrito.precioUnitario} <br> Cantidad: ${productoCarrito.cantidad} <br> Subtotal del producto: $${productoCarrito.precio} <br><img width="120px"src="${productoCarrito.foto}"> <br> <button type="button" class="mp-btn mp-btn-primary" data-accion="editar" data-nombre="${productoCarrito.nombre}" data-cantidadUser="${productoCarrito.cantidad}" data-precio="${productoCarrito.precio}" data-img="${productoCarrito.foto}">Editar Producto</button> <button type="button" class="mp-btn mp-btn-secondary" data-accion="eliminar" data-nombre="${productoCarrito.nombre}">Eliminar Producto</button><br><br><br> </div>`
 		}
 		let total = `<div class="mp-card"> <hr> <h3>Resumen de la compra:</h3> Monto (sin IVA): ${sumaSinIva.toFixed(2)} <br> IVA: $${sumaIva.toFixed(2)} <br><br> TOTAL: $${sumaTotal.toFixed(2)}</div>`

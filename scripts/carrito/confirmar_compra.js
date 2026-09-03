@@ -1,19 +1,16 @@
+import { GestorCarrito } from "../gestores/gestorCarrito.js";
+
+let gestorCarrito = new GestorCarrito();
+
 let productosCarrito = leerDeStorage("productosMiCarrito",[]);
 usuarioActual = validarSesion();
 
 function resumenCompra() {
-	let carrito = "<h3>Productos: </h3>"
-	let sumaTotal = 0;
-	let sumaIva = 0;
-	let sumaSinIva = 0; 
+	let carrito = "<h3>Productos: </h3>";
+	let {sumaTotal,sumaIva,sumaSinIva} = gestorCarrito.calcularResumen(usuarioActual.correo);
 	for(let i = 0; i < productosCarrito.length; i++) {
 		let productoCarrito = productosCarrito[i]
 		if(productoCarrito.usuario == usuarioActual.correo) {
-			let monto = Number(productoCarrito.precio) / (1 + Number(productoCarrito.iva) / 100);
-			let iva = Number(productoCarrito.precio) - monto;
-			sumaSinIva += monto
-			sumaIva += iva
-			sumaTotal += Number(productoCarrito.precio)
 			carrito +=` <div class="card"> <h3>${productoCarrito.nombre}</h3> <img src="${productoCarrito.foto}" width="150"> <p>Cantidad: ${productoCarrito.cantidad}</p> </div> `;
 		}
 	}
@@ -24,45 +21,56 @@ function resumenCompra() {
 
 resumenCompra();
 
-function mostrarTexto(tipo){
-	if(tipo === "domicilio") {
+let envioDomicilio = document.getElementById("Envio-Domicilio");
+let retiroSucrusal = document.getElementById("Retiro-pickUp");
+
+envioDomicilio.addEventListener("change",mostrarTexto);
+retiroSucrusal.addEventListener("change",mostrarTexto);
+
+function mostrarTexto(){
+	if(envioDomicilio.checked) {
 		document.getElementById("direccion").innerHTML = `<label for="direccionCompra">Ingresa tu dirección</label> <br> <input id="direccionCompra" type="text" required>`
-	} else if (tipo === "sucursal") {
+	} else if (retiroSucrusal.checked) {
 		document.getElementById("direccion").innerHTML = ""
 	}
 }
 
-function confirmarCompra() {
+let formConfirmar = document.getElementById("form-confirmar");
+if(formConfirmar) {
+	formConfirmar.addEventListener("submit",function(e){ 
+		e.preventDefault();
 
-    let metodoPago = document.querySelector('input[name="metodPago"]:checked').value
-	let metodoEntrega = document.querySelector('input[name="metodeEnvio"]:checked').value
-    let metodoEnvio = document.querySelector('input[name="metodeEnvio"]:checked')
+		let metodoPago = document.querySelector('input[name="metodPago"]:checked').value
+		let metodoEnvio = document.querySelector('input[name="metodeEnvio"]:checked')
 
-    if (!metodoEnvio) {
-        alert("Seleccione un método de envío");
-        return;
-    }
-
-	let direccionEnvio;
-    
-	if(metodoEnvio.value === "Envio-Domicilio") {
-		let inputDireccion = document.getElementById("direccionCompra");
-
-		if(!inputDireccion || inputDireccion.value.trim() === "") {
-			alert("Ingrese una dirección valida.");
+		if (!metodoEnvio) {
+			alert("Seleccione un método de envío");
 			return;
 		}
+		
+		let metodoEntrega = document.querySelector('input[name="metodeEnvio"]:checked').value
+		let direccionEnvio;
+		
+		if(metodoEnvio.value === "Envio-Domicilio") {
+			let inputDireccion = document.getElementById("direccionCompra");
 
-		direccionEnvio = inputDireccion.value;
-	} else {
-		direccionEnvio = "PickUp - Coronel Arroyo 521"
-	}
-	
-    let datosEntrega = {
-		metodoPago: metodoPago,
-		metodoEntrega: metodoEntrega,
-		direccion: direccionEnvio
-	}
-	guardarEnStorage("datosCompra",datosEntrega);
-	window.location.href = "compra_realizada.html"
+			if(!inputDireccion || inputDireccion.value.trim() === "") {
+				alert("Ingrese una dirección valida.");
+				return;
+			}
+
+			direccionEnvio = inputDireccion.value;
+		} else {
+			direccionEnvio = "PickUp - Coronel Arroyo 521"
+		}
+		
+		let datosEntrega = {
+			metodoPago: metodoPago,
+			metodoEntrega: metodoEntrega,
+			direccion: direccionEnvio
+		}
+		guardarEnStorage("datosCompra",datosEntrega);
+		window.location.href = "compra_realizada.html"
+	})
 }
+
