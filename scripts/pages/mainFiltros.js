@@ -1,3 +1,4 @@
+protegerPagina();
 import { GestorCategorias } from "../gestores/gestorCategorias.js";
 let gestorCategorias = new GestorCategorias();
 

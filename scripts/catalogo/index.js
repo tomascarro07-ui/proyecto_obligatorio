@@ -1,6 +1,8 @@
 usuarioActual = validarSesion();
+let productosCarrito = leerDeStorage("productosMiCarrito",[]);
 let productos = leerDeStorage("productosRegistrados",[]);
 let cotizacion = "";
+let cantidadTotal = 0;
 
 if(!usuarioActual) {
 	document.getElementById("usuarioActual").innerHTML = "¡Bienvenido a Mundo Periféricos!";
@@ -20,6 +22,17 @@ if(!usuarioActual) {
 	} else {
 		document.getElementById("usuario").innerHTML = `<div class="menu"><a href="compras_usuario.html">Mis compras</a> <a href="guia_uso.html">Ayuda</a> <a href="cotizaciones.html">Cotizaciones</a>`;
 	};
+
+	let cantidadTotal = 0;
+
+	for(let i = 0; i < productosCarrito.length; i++) {
+		if(productosCarrito[i].usuario === usuarioActual.correo) {
+			cantidadTotal += Number(productosCarrito[i].cantidad);
+		}
+	}
+
+	document.getElementById("cantidadCarrito").innerHTML = cantidadTotal;
+
 }
 
 let formBuscador = document.getElementById("form-buscador");
@@ -30,4 +43,5 @@ if(formBuscador) {
 		}
 	});
 }
+
 
