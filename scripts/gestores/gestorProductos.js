@@ -48,7 +48,7 @@ export class GestorProducto {
 				producto.tipoProducto = tipoProducto;
 				producto.stockProducto = stockProducto;
 				producto.precioProducto = precioProducto;
-				producto.imgProducto = imagenProducto;
+				producto.imagenProducto = imagenProducto;
 				producto.ivaProducto = ivaProducto;
 				producto.precioFinal = precioFinal;
 			}
