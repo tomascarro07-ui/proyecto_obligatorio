@@ -43,7 +43,7 @@ export class GestorProducto {
 		for(let i = 0; i < productos.length; i++) {
 			let producto = productos[i];
 			if(producto.nombreProducto === nombreOriginal) {
-				let precioFinal = precioProducto + (precioProducto * ivaProducto / 100);
+				let precioFinal = precioProducto + (precioProducto * ivaProducto / 100).toFixed(2);
 				producto.nombreProducto = nombreProducto;
 				producto.tipoProducto = tipoProducto;
 				producto.stockProducto = stockProducto;
@@ -70,7 +70,7 @@ export class GestorProducto {
 		if(valor == 10) {
 			return "minimo";
 		} else if(valor == 22) {
-			return "basico"
+			return "basico";
 		} else {
 			return "exento";
 		}

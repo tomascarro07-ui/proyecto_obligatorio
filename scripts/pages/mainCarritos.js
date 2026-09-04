@@ -22,18 +22,20 @@ function mostrarCarrito() {
 
 	if(tieneProductos.length === 0) {
 		document.getElementById("micarrito").innerHTML = "Tu carrito está vacío. <a href='index.html'><u>¡Agregá algunos productos para continuar!</u></a>"
-	}
-	let carrito = "Productos en mi carrito: <br><br>";
-	let {sumaTotal,sumaIva,sumaSinIva} = gestorCarrito.calcularResumen(usuarioActual.correo);
-	for(let i = 0; i < productosCarrito.length; i++) {
-		let productoCarrito = productosCarrito[i]
-		if(productoCarrito.usuario == usuarioActual.correo) {
-			carrito += `<div class="mp-card"> <h3>${productoCarrito.nombre}</h3> <br> Precio por unidad: $${productoCarrito.precioUnitario} <br> Cantidad: ${productoCarrito.cantidad} <br> Subtotal del producto: $${productoCarrito.precio} <br><img width="120px"src="${productoCarrito.foto}"> <br> <button type="button" class="mp-btn mp-btn-primary" data-accion="editar" data-nombre="${productoCarrito.nombre}" data-cantidadUser="${productoCarrito.cantidad}" data-precio="${productoCarrito.precio}" data-img="${productoCarrito.foto}">Editar Producto</button> <button type="button" class="mp-btn mp-btn-secondary" data-accion="eliminar" data-nombre="${productoCarrito.nombre}">Eliminar Producto</button><br><br><br> </div>`
-		}
+	} else {
+		let carrito = "Productos en mi carrito: <br><br>";
+		let {sumaTotal,sumaIva,sumaSinIva} = gestorCarrito.calcularResumen(usuarioActual.correo);
+		for(let i = 0; i < productosCarrito.length; i++) {
+			let productoCarrito = productosCarrito[i]
+			if(productoCarrito.usuario == usuarioActual.correo) {
+				carrito += `<div class="mp-card"> <h3>${productoCarrito.nombre}</h3> <br> Precio por unidad: $${productoCarrito.precioUnitario} <br> Cantidad: ${productoCarrito.cantidad} <br> Subtotal del producto: $${productoCarrito.precio} <br><img width="120px"src="${productoCarrito.foto}"> <br> <button type="button" class="mp-btn mp-btn-primary" data-accion="editar" data-nombre="${productoCarrito.nombre}" data-cantidadUser="${productoCarrito.cantidad}" data-precio="${productoCarrito.precio}" data-img="${productoCarrito.foto}">Editar Producto</button> <button type="button" class="mp-btn mp-btn-secondary" data-accion="eliminar" data-nombre="${productoCarrito.nombre}">Eliminar Producto</button><br><br><br> </div>`
+			}
+		}	
 		let total = `<div class="mp-card"> <hr> <h3>Resumen de la compra:</h3> Monto (sin IVA): ${sumaSinIva.toFixed(2)} <br> IVA: $${sumaIva.toFixed(2)} <br><br> TOTAL: $${sumaTotal.toFixed(2)}</div>`
 		document.getElementById("micarrito").innerHTML = carrito
 		document.getElementById("totalCompra").innerHTML = total
-	}	
+	}
+	
 }
 
 function continuarCompra() {

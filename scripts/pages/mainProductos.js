@@ -20,6 +20,16 @@ function mostrarCatalogo() {
 
 mostrarCatalogo()
 
+let nuevoId = productos.length + 1;
+for(let i = 0; i < productos.length; i++) {
+	let producto = productos[i];
+	if(producto.id === nuevoId) {
+		nuevoId++;
+		i = -1;
+	}
+}
+document.getElementById("idProducto").value = nuevoId;
+
 document.addEventListener("DOMContentLoaded", function() {
 		
 	let lista = document.getElementById("filtroTipo");
@@ -46,17 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
-
-let nuevoId = productos.length + 1;
-for(let i = 0; i < productos.length; i++) {
-	let producto = productos[i];
-	if(producto.id === nuevoId) {
-		nuevoId++;
-		i = -1;
-	}
-}
-
-document.getElementById("idProducto").value = nuevoId;
 
 let mensajeCatalogo = leerDeStorage("mensajeCatalogo",false);
 if(mensajeCatalogo) {

@@ -37,7 +37,7 @@ if(formProducto) {
 			guardarEnStorage("mensajeCarrito",true);
 			window.location.href="index.html";
 		} else {
-			window.location.href="registro.html";
+			window.location.href = "registro.html";
 		}
     });
 }

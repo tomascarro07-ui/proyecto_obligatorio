@@ -32,34 +32,34 @@ for(let i = 0; i < productos.length; i++) {
 document.addEventListener("cotizacionesListas",function() {
 	let precioFinal = precioAlCarrito;
 	if(cotizacion == "dolar") {
-		document.getElementById("tipoConversion").value = cotizacion
-		precioFinal = convertirPrecio(precioAlCarrito,"USD")
+		document.getElementById("tipoConversion").value = cotizacion;
+		precioFinal = convertirPrecio(precioAlCarrito,"USD");
 	} else if (cotizacion == "euro") {
-		document.getElementById("tipoConversion").value = cotizacion
-		precioFinal = convertirPrecio(precioAlCarrito,"EUR")
+		document.getElementById("tipoConversion").value = cotizacion;
+		precioFinal = convertirPrecio(precioAlCarrito,"EUR");
 	} else if(cotizacion == "peso-argentino") {
-		document.getElementById("tipoConversion").value = cotizacion
-		precioFinal = convertirPrecio(precioAlCarrito,"ARS")
+		document.getElementById("tipoConversion").value = cotizacion;
+		precioFinal = convertirPrecio(precioAlCarrito,"ARS");
 	} else {
-		precioFinal = precioAlCarrito
+		precioFinal = precioAlCarrito;
 	};
 	document.getElementById("precioProducto").innerHTML = `Precio: $${precioFinal}`;
 });
 
-document.addEventListener("click",function() {
+document.getElementById("tipoConversion").addEventListener("change", function() {
 	let conversion = document.getElementById("tipoConversion").value
 	let precioFinal;
 	if(conversion == "dolar") {
-		precioFinal = convertirPrecio(precioAlCarrito,"USD")
+		precioFinal = convertirPrecio(precioAlCarrito,"USD");
 	} else if(conversion == "euro") {
-		precioFinal = convertirPrecio(precioAlCarrito,"EUR")
+		precioFinal = convertirPrecio(precioAlCarrito,"EUR");
 	} else if(conversion == "peso-argentino") {
-		precioFinal = convertirPrecio(precioAlCarrito,"ARS")
+		precioFinal = convertirPrecio(precioAlCarrito,"ARS");
 	} else {
-		precioFinal = precioAlCarrito
+		precioFinal = precioAlCarrito;
 	};
 	
-	document.getElementById("precioProducto").innerHTML = `Precio: $${precioFinal}`
+	document.getElementById("precioProducto").innerHTML = `Precio: $${precioFinal}`;
 })
 	
 function avisarStock() {
@@ -68,7 +68,8 @@ function avisarStock() {
 		if(producto.id === productoID) {
 			if(producto.stockProducto === 0) {
 				document.getElementById("enviarBtn").innerHTML = "";
-				document.getElementById("faltaStock").innerHTML = `<button class="mp-btn mp-btn-secondary" type="button" onclick="alert('¡Se ha informado!')">¡Informar falta de stock!</button>`
+				document.getElementById("faltaStock").innerHTML = `<button class="mp-btn mp-btn-secondary" type="button" onclick="alert('¡Se ha informado!')">¡Informar falta de stock!</button>`;
+
 				return;
 			}
 		}

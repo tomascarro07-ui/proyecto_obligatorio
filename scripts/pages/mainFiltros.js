@@ -12,7 +12,7 @@ function mostrarCategorias() {
 	document.getElementById("mostrarFiltro").innerHTML = filtroCategoria;
 }
 
-mostrarCategorias()
+mostrarCategorias();
 
 document.addEventListener("DOMContentLoaded", function() {
 
