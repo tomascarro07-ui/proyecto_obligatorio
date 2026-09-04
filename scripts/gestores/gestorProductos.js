@@ -43,14 +43,15 @@ export class GestorProducto {
 		for(let i = 0; i < productos.length; i++) {
 			let producto = productos[i];
 			if(producto.nombreProducto === nombreOriginal) {
-				let precioFinal = precioProducto + (precioProducto * ivaProducto / 100).toFixed(2);
+				let precioFinal = Number(precioProducto) + Number(precioProducto) * Number(ivaProducto) / 100;
+				precioFinal = Number(precioFinal.toFixed(2));
 				producto.nombreProducto = nombreProducto;
 				producto.tipoProducto = tipoProducto;
 				producto.stockProducto = stockProducto;
-				producto.precioProducto = precioProducto;
+				producto.precioProducto = Number(precioProducto);
 				producto.imagenProducto = imagenProducto;
-				producto.ivaProducto = ivaProducto;
-				producto.precioFinal = precioFinal;
+				producto.ivaProducto = Number(ivaProducto);
+				producto.precioFinal = Number(precioFinal);
 			}
 		}
 		guardarEnStorage("productosRegistrados",productos);

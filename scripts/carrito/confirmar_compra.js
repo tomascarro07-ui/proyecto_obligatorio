@@ -11,10 +11,19 @@ function resumenCompra() {
 	for(let i = 0; i < productosCarrito.length; i++) {
 		let productoCarrito = productosCarrito[i]
 		if(productoCarrito.usuario == usuarioActual.correo) {
-			carrito +=` <div class="card"> <h3>${productoCarrito.nombre}</h3> <img src="${productoCarrito.foto}" width="150"> <p>Cantidad: ${productoCarrito.cantidad}</p> </div> `;
+			carrito +=` <div class="card"> 
+				<h3>${productoCarrito.nombre}</h3> 
+				<img src="${productoCarrito.foto}" width="150"> 
+				<p>Cantidad: ${productoCarrito.cantidad}</p> 
+			</div> `;
 		}
 	}
-	let total = `<div class="card"> <h3>Resumen de la compra:</h3> Monto (sin IVA): ${sumaSinIva.toFixed(2)} <br> IVA: $${sumaIva.toFixed(2)} <br><br> <h3>TOTAL: $${sumaTotal.toFixed(2)}</h3> </div>`
+	let total = `<div class="card"> 
+		<h3>Resumen de la compra:</h3> 
+		Monto (sin IVA): ${sumaSinIva.toFixed(2)} <br> 
+		IVA: $${sumaIva.toFixed(2)} <br><br> 
+		<h3>TOTAL: $${sumaTotal.toFixed(2)}</h3> 
+	</div>`
 	document.getElementById("micarrito").innerHTML = carrito
 	document.getElementById("totalCompra").innerHTML = total
 }

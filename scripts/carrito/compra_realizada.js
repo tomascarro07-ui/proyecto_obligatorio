@@ -15,7 +15,11 @@ function resumenCompra() {
 	for(let i = 0; i < productosCarrito.length; i++) {
 		let productoCarrito = productosCarrito[i];
 		if(productoCarrito.usuario == usuarioActual.correo) {
-			carrito += ` <div class="card"> <h3>${productoCarrito.nombre}</h3> <img src="${productoCarrito.foto}" width="150"> <p>Cantidad: ${productoCarrito.cantidad}</p> </div> `;
+			carrito += ` <div class="card"> 
+				<h3>${productoCarrito.nombre}</h3> 
+				<img src="${productoCarrito.foto}" width="150"> 
+				<p>Cantidad: ${productoCarrito.cantidad}</p> 
+			</div> `;
 			cantidadProducto += productoCarrito.cantidad;
 			nombreProducto += `Producto: ${productoCarrito.nombre}. Cantidad: ${productoCarrito.cantidad} <br>`;
 		}

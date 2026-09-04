@@ -10,7 +10,7 @@ function mostarVentas() {
 		if(venta.estado === "Entregado") {
 			botonEstado = `Estado: <b>Entregado</b>`;
 		} else {
-			botonEstado = `<button class="mp-btn mp-btn-primary" data-accion="enviado" data-id="${venta.id}">Enviado</button>`;
+			botonEstado = `<button class="mp-btn mp-btn-primary" data-accion="enviado" data-id="${venta.id}">Marcar como entregado</button>`;
 		}
 
 		if(venta.metodoEntrega == "Envio-Domicilio") {

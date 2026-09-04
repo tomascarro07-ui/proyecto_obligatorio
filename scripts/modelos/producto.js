@@ -3,8 +3,8 @@ export class Producto {
 		this.id = id
 		this.nombreProducto = nombreProducto;
 		this.stockProducto = stockProducto;
-		this.precioProducto = precioProducto;
-		this.ivaProducto = ivaProducto;
+		this.precioProducto = Number(precioProducto);
+		this.ivaProducto = Number(ivaProducto);
 		this.imagenProducto = imagenProducto;
 		this.precioFinal = Number(precioProducto + (precioProducto * ivaProducto / 100)).toFixed(2);
 		this.tipoProducto = tipoProducto;

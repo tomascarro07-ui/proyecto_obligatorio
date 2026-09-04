@@ -21,7 +21,7 @@ for(let i = 0; i < productos.length; i++) {
 		document.getElementById("nombreProducto").value = producto.nombreProducto;
 		document.getElementById("filtroTipo").value = producto.tipoProducto;
 		document.getElementById("cantidadProducto").value = producto.stockProducto;
-		document.getElementById("precioProducto").value = producto.precioProducto;
+		document.getElementById("precioProducto").value = Number(producto.precioProducto);
 		document.getElementById("imgProducto").value = producto.imagenProducto;
 		document.getElementById("ivaProducto").value = gestorProductos.obtenerIvaTexto(producto.ivaProducto);
 	}
