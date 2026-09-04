@@ -4,8 +4,9 @@ let productos = leerDeStorage("productosRegistrados",[]);
 export class GestorCategorias {
     
     agregarCategoria() {
+        let input = document.getElementById("nombreCategoria").value
         let categoria = { 
-            nombreCategoria: document.getElementById("nombreCategoria").value
+            nombreCategoria: input.charAt(0).toUpperCase() + input.slice(1).toLowerCase()
         }
         categorias.push(categoria);
         guardarEnStorage("categoriasRegistradas",categorias);

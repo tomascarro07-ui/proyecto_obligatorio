@@ -20,7 +20,7 @@ function inicializarProductos() {
 			1890,
 			ivaMinimo,
 			"img/teclado-mecanico-redragon-kumara-k552.webp",
-			"teclados"
+			"Teclados"
 	)
 
 	gestorProductos.agregarProducto(
@@ -30,7 +30,7 @@ function inicializarProductos() {
 			1299,
 			ivaBasico,
 			"img/mouse-logitech-g203-lightsync.webp",
-			"mouses"
+			"Mouses"
 	)
 
 	gestorProductos.agregarProducto(
@@ -40,7 +40,7 @@ function inicializarProductos() {
 			2490,
 			ivaMinimo,
 			"img/hyperx-cloud-stinger.webp",
-			"auriculares"
+			"Auriculares"
 	)
 		
 	gestorProductos.agregarProducto(
@@ -50,7 +50,7 @@ function inicializarProductos() {
 			590,
 			ivaExtento,
 			"img/mousepad-xl-gamer.webp",
-			"mouses"
+			"Mouses"
 	)
 
 	gestorProductos.agregarProducto(
@@ -60,7 +60,7 @@ function inicializarProductos() {
 			899,
 			ivaBasico,
 			"img/teclado-logitech-k120.webp",
-			"teclados"
+			"Teclados"
 	)
 
 	gestorProductos.agregarProducto(
@@ -70,7 +70,7 @@ function inicializarProductos() {
 			990,
 			ivaMinimo,
 			"img/mouse-inalambrico-logitech-m185.webp",
-			"mouses"
+			"Mouses"
 	)
 
 	gestorProductos.agregarProducto(
@@ -80,7 +80,7 @@ function inicializarProductos() {
 			1790,
 			ivaExtento,
 			"img/auriculares-logitech-h390-usb.webp",
-			"auriculares"
+			"Auriculares"
 	)
 
 	gestorProductos.agregarProducto(
@@ -90,7 +90,7 @@ function inicializarProductos() {
 			2990,
 			ivaMinimo,
 			"img/microfono-fifine-k669.webp",
-			"microfonos"
+			"Microfonos"
 	)
 
 	gestorProductos.agregarProducto(
@@ -100,7 +100,7 @@ function inicializarProductos() {
 			2499,
 			ivaBasico,
 			"img/logitech-c920.webp",
-			"webcams"
+			"Webcams"
 	)
 
 	gestorProductos.agregarProducto(
@@ -110,7 +110,7 @@ function inicializarProductos() {
 			1190,
 			ivaExtento,
 			"img/joystick-usb-pc.webp",
-			"joysticks"
+			"Joysticks"
 	)
 }
 
@@ -126,22 +126,22 @@ function inicializarCategorias() {
 
 	categorias = [
     { 
-		nombreCategoria: "teclados" 
+		nombreCategoria: "Teclados" 
 	},
     { 
-		nombreCategoria: "mouses" 
+		nombreCategoria: "Mouses" 
 	},
     {
-		nombreCategoria: "auriculares" 
+		nombreCategoria: "Auriculares" 
 	},
     {
-		nombreCategoria: "microfonos" 
+		nombreCategoria: "Microfonos" 
 	},
     {
-		nombreCategoria: "webcams" 
+		nombreCategoria: "Webcams" 
 	},
     {
-		nombreCategoria: "joysticks" 
+		nombreCategoria: "Joysticks" 
 	}
 ]
 	guardarEnStorage("categoriasRegistradas",categorias);
