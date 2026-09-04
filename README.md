@@ -71,12 +71,12 @@ El proyecto combina dos formas de cargar JavaScript:
 - [scripts/admin/editar_producto_admin.js](scripts/admin/editar_producto_admin.js): carga los datos de un producto existente en el formulario de edición y guarda los cambios.
 - [scripts/admin/ventas_admin.js](scripts/admin/ventas_admin.js): historial completo de ventas, mostrando la dirección de entrega cuando corresponde, y ganancia total.
 
-### scripts/pages/ (inicialización de página)
+### scripts/pages/ 
 - [scripts/pages/mainProductos.js](scripts/pages/mainProductos.js): arma el catálogo de `admin.html` y calcula el próximo id disponible para un producto nuevo.
 - [scripts/pages/mainCarritos.js](scripts/pages/mainCarritos.js): arma el listado del carrito y redirige a `login.html` si no hay una sesión activa.
 - [scripts/pages/mainFiltros.js](scripts/pages/mainFiltros.js): listado de categorías en `editar_categorias_admin.html`.
 
-### scripts/ (formularios, en la raíz)
+### scripts/
 - [scripts/formCarrito.js](scripts/formCarrito.js): valida y procesa el formulario para agregar un producto al carrito; si no hay sesión iniciada, redirige a `registro.html`.
 - [scripts/formProductos.js](scripts/formProductos.js): valida y procesa el alta de un producto nuevo desde `admin.html`.
 - [scripts/formFiltros.js](scripts/formFiltros.js): valida y procesa el alta de una categoría/filtro nuevo.
