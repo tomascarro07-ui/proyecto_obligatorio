@@ -1,5 +1,5 @@
 class Venta {
-	constructor(id,fecha,persona,correo,cantidadProductos,iva,subtotal,nombreProductos,metodoPago,metodoEntrega,direccion) {
+	constructor(id,fecha,persona,correo,cantidadProductos,iva,subtotal,nombreProductos,metodoPago,metodoEntrega,direccion,estado) {
 		this.id = id;
 		this.fecha = fecha;
 		this.persona = persona
@@ -12,5 +12,6 @@ class Venta {
 		this.metodoPago = metodoPago;
 		this.metodoEntrega = metodoEntrega;
 		this.direccion = direccion;
+		this.estado = estado;
 	};
 };

@@ -32,7 +32,8 @@ function resumenCompra() {
 		nombreProducto,
 		datosEntrega.metodoPago,
 		datosEntrega.metodoEntrega,
-		datosEntrega.direccion
+		datosEntrega.direccion,
+		"En agencia"
 	);
 	
 	ventasRealizadas.push(ventaRealizada);
