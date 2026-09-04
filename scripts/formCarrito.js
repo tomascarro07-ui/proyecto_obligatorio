@@ -31,8 +31,11 @@ if(formProducto) {
 				fotoProducto,
 				usuarioActual.correo
 			);
-			alert("¡Producto agregado correctamente!");
-			window.location.href = "index.html";
+			
+			stockProducto -= cantidadAlCarrito;
+            document.getElementById("cantidadProducto").innerHTML = `Stock: ${stockProducto}`;
+			guardarEnStorage("mensajeCarrito",true);
+			window.location.href="index.html";
 		} else {
 			window.location.href="registro.html";
 		}

@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mundo Periféricos - Menu</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"rel="stylesheet"integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -103,33 +104,48 @@
 			<center><div id="catalogoProductos"></div></center>
 		</div>
 
+		<!-- Componentes Bootstrap -->
+
+		<div class="toast-container position-fixed bottom-0 end-0 p-3">
+			<div id="toastCarrito" class="toast toast-verde" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<strong class="me-auto">🛒 Mundo Periféricos</strong>
+					<small>Ahora</small>
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+				</div>
+				<div class="toast-body" id="mensajeToast">
+					¡Producto agregado al carrito!.
+				</div>
+			</div>
+		</div>
+		
 		<footer class="py-3 my-4">
-  <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-    <li class="nav-item">
-      <a href="#" class="nav-link px-2 text-white">Inicio</a>
-    </li>
-    <li class="nav-item">
-      <a href="#catalogo" class="nav-link px-2 text-white">Catálogo</a>
-    </li>
-    <li class="nav-item">
-      <a href="guia_uso.html" class="nav-link px-2 text-white">Guia de Uso</a>
-    </li>
-    <li class="nav-item">
-      <a href="https://github.com/tomascarro07-ui/proyecto_obligatorio/tree/master" target="_blank" class="nav-link px-2 text-white">GitHub</a>
-    </li>
-    <li class="nav-item">
-      <a href="#" class="nav-link px-2 text-white">Sobre nosotros</a>
-    </li>
-  </ul>
-  <p class="text-center text-white mb-0">&copy; 2026 Mundo Periféricos - Tomas & Dario</p>
-</footer>
+			<ul class="nav justify-content-center border-bottom pb-3 mb-3">
+				<li class="nav-item">
+				<a href="#" class="nav-link px-2 text-white">Inicio</a>
+				</li>
+				<li class="nav-item">
+				<a href="#catalogo" class="nav-link px-2 text-white">Catálogo</a>
+				</li>
+				<li class="nav-item">
+				<a href="guia_uso.html" class="nav-link px-2 text-white">Guia de Uso</a>
+				</li>
+				<li class="nav-item">
+				<a href="https://github.com/tomascarro07-ui/proyecto_obligatorio/tree/master" target="_blank" class="nav-link px-2 text-white">GitHub</a>
+				</li>
+				<li class="nav-item">
+				<a href="#" class="nav-link px-2 text-white">Sobre nosotros</a>
+				</li>
+			</ul>
+			<p class="text-center text-white mb-0">&copy; 2026 Mundo Periféricos - Tomas & Dario</p>
+		</footer>
 
 		<script src="scripts/base/storage.js"></script>
 		<script src="scripts/base/autenticacion.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 		<script type="module" src="scripts/base/initializer.js"></script>
 		<script src="scripts/catalogo/index.js"></script>
 		<script src="scripts/catalogo/listar_productos.js"></script>
 		<script src="scripts/modelos/moneda.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"crossorigin="anonymous"></script>
 	</body>
 </html>

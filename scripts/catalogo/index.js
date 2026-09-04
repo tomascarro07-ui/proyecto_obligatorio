@@ -44,4 +44,14 @@ if(formBuscador) {
 	});
 }
 
+let mensajeCarrito = leerDeStorage("mensajeCarrito",false);
+if(mensajeCarrito) {
+	let toastElemento = document.getElementById("toastCarrito");
+    let toast = new bootstrap.Toast(toastElemento, { delay: 3000 });
+
+    toast.show();
+
+    guardarEnStorage("mensajeCarrito", false);
+}
+
 

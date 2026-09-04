@@ -887,3 +887,13 @@ textarea{
 .moneda {
     position: static;
 }
+
+.toast-verde .toast-header {
+    background-color: #274e13;
+    color: white;
+}
+
+.toast-verde .toast-body {
+    background-color: #e6f2df;
+    color: #274e13;
+}

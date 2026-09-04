@@ -28,5 +28,7 @@ if(formProductos) {
 			document.getElementById("imgProducto").value,
 			document.getElementById("filtroTipo").value
 		);
+		guardarEnStorage("mensajeProducto",true);
+		window.location.href="admin.html";
 	});
 }

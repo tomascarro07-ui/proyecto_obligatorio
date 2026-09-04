@@ -58,4 +58,22 @@ for(let i = 0; i < productos.length; i++) {
 
 document.getElementById("idProducto").value = nuevoId;
 
-mostrarCatalogo();
+let mensajeCatalogo = leerDeStorage("mensajeCatalogo",false);
+if(mensajeCatalogo) {
+	let toastElemento = document.getElementById("toastCategoria");
+    let toast = new bootstrap.Toast(toastElemento, { delay: 3000 });
+
+    toast.show();
+
+    guardarEnStorage("mensajeCatalogo",false);
+}
+
+let mensajeProducto = leerDeStorage("mensajeProducto",false);
+if(mensajeProducto) {
+	let toastElemento = document.getElementById("toastProducto");
+    let toast = new bootstrap.Toast(toastElemento, { delay: 3000 });
+
+    toast.show();
+
+    guardarEnStorage("mensajeProducto", false);
+}

@@ -20,6 +20,8 @@ if(formCategorias) {
         }
         
         gestorCategorias.agregarCategoria();
+        guardarEnStorage("mensajeCatalogo",true);
+		window.location.href="admin.html";
 
     });
 }
